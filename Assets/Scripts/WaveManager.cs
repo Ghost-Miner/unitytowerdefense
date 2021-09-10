@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
+
+    //----------------------------------
+    // THIS WHOLE SYSTEM IS ONE BIG MESS WHICH DOESNT EVEN WORK PROPERLY
+    // I have no idea what I'm doing
+    // Please send help
+    //-------------------------------
+
+
     #region References and variables
     public WaveBlueprint[] waves;
 
@@ -31,6 +39,7 @@ public class WaveManager : MonoBehaviour
     bool unit3spawned;
 
     public TMP_Text timer;
+    public TMP_Text wavestartedtext;
     #endregion
 
     private void Start()
@@ -42,7 +51,8 @@ public class WaveManager : MonoBehaviour
 
     private void Update()
     {
-        waveNumberText.text = (waveIndex + 1).ToString();
+        wavestartedtext.text = waveStarted.ToString(); // debug text
+        waveNumberText.text = (waveIndex + 1).ToString(); // wave numer 
 
         if (waveStarted) 
         {
@@ -51,20 +61,31 @@ public class WaveManager : MonoBehaviour
             spawnTimer += Time.deltaTime;
             timer.text = spawnTimer.ToString();
 
-            if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned)
+            if (wave.u3_prefab == null && wave.u2_prefab == null)
+            {
+                waveStarted = false;
+                spawnTimer = 0f;
+            }
+
+            if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned && wave.u2_prefab != null)
             {
                 unit2spawned = true;
                 Debug.Log("unit 2 spawned");
                 StartCoroutine(SpawnEnemyCour_2());
+
+                if (wave.u3_prefab == null)
+                {
+                    waveStarted = false;
+                    spawnTimer = 0f;
+                }
             }
 
-            if (spawnTimer >= wave.u3_spawnDelay && !unit3spawned)
+            if (spawnTimer >= wave.u3_spawnDelay && !unit3spawned && wave.u3_prefab != null)
             {
                 unit3spawned = true;
                 Debug.Log("unit 3  spawned");
                 StartCoroutine(SpawnEnemyCour_3());
-                waveStarted = false;
-                spawnTimer = 0f;
+
             }
         }
 

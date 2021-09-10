@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class WaveBlueprint
 {
+    // Changed and expanded copy of Wave.cs
+
     [Header("Unit 1")]
     public GameObject u1_prefab;
     public int u1_Count;

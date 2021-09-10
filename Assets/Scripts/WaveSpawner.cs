@@ -6,6 +6,13 @@ using TMPro;
 
 public class WaveSpawner : MonoBehaviour
 {
+
+    //----------------------------------
+    // This sxcript is taken from Tower defense tutorial
+    // It works, but supports only one type of unit
+    // Yu can add more pbjects but they all have to share same properties
+    //-------------------------------
+
     #region References and variables
     public Wave[] waves;
 
