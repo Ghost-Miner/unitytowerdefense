@@ -14,6 +14,10 @@ public class MainMenu : MonoBehaviour
 
     public void LoadScene (string sceneName)
     {
+        if (sceneName == null)
+        {
+            Debug.LogError("Scene name not set!");
+        }
         SceneManager.LoadScene(sceneName);
     }
 
