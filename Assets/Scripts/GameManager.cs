@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text fpsDisplay;                     //FPS meter
     public TMP_Text versionText;
 
+    float time;
+
     ///ObjectPooler objectPooler; 
 
     private void Start()

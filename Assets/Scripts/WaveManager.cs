@@ -35,11 +35,17 @@ public class WaveManager : MonoBehaviour
     public bool waveAutoStart;
     private bool waveStarted = false;
 
+    public GameObject startButton;
+    public GameObject speedButton;
+
     bool unit2spawned;
     bool unit3spawned;
 
     public TMP_Text timer;
     public TMP_Text wavestartedtext;
+    public TMP_Text waveSpeedText;
+
+    private float gameSpeed;
     #endregion
 
     private void Start()
@@ -47,6 +53,13 @@ public class WaveManager : MonoBehaviour
         waveStarted = false;
         unit2spawned = false;
         unit3spawned = false;
+
+        gameSpeed = Time.timeScale;
+    }
+
+    private void FixedUpdate()
+    {
+        waveSpeedText.text = "SPEED: " + gameSpeed + "x";
     }
 
     private void Update()
@@ -91,7 +104,10 @@ public class WaveManager : MonoBehaviour
 
         if (enemiesAlive > 0 || GameObject.FindWithTag("Enemy") != null)
         {
-            waveStartButton.interactable = false;
+            startButton.SetActive(false);
+            speedButton.SetActive(true);
+
+            //waveStartButton.interactable = false;
 
             if (waveIndex == waves.Length)
             {
@@ -110,7 +126,10 @@ public class WaveManager : MonoBehaviour
 
     void EnableButton()
     {
-        waveStartButton.interactable = true;
+        startButton.SetActive(true);
+        speedButton.SetActive(false);
+
+        //waveStartButton.interactable = true;
     }
 
     public void StartWaveButton()
@@ -120,11 +139,30 @@ public class WaveManager : MonoBehaviour
             return;
         }
 
-        //StartCoroutine(StartWaveCour());
         StartWave();
-        waveStartButton.interactable = false;
+
+        startButton.SetActive(false);
+        speedButton.SetActive(true);
 
         Debug.Log("Starting wave " + (waveIndex));
+    }
+
+    public void WaveSpeed ()
+    {
+        if (Time.timeScale <= 1f)
+        {
+            Time.timeScale = 2f;
+            gameSpeed = Time.timeScale;
+
+            Debug.Log(gameSpeed);
+        } 
+        else if (Time.timeScale >= 2f)
+        {
+            Time.timeScale = 1f;
+            gameSpeed = Time.timeScale;
+
+            Debug.Log(gameSpeed);
+        }
     }
 
     void StartWave ()
@@ -216,7 +254,6 @@ public class WaveManager : MonoBehaviour
 
         //Debug.Log("Unit method called");
     }
-
 
     void EndGame()
     {

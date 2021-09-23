@@ -5,20 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
+    #region VARIABLES & REFERENCES
+    // Animations
+    public Animator anim;
+    private string currentState;
 
-    public void PlayGame ()
-    {
-
-    }
+    public SceneTransition sceneTransition;
+    #endregion
 
     public void LoadScene (string sceneName)
     {
-        if (sceneName == null)
-        {
-            Debug.LogError("Scene name not set!");
-        }
-        SceneManager.LoadScene(sceneName);
+        sceneTransition.ChangeScene(sceneName);
     }
 
     public void OpenLink (string link)
@@ -29,5 +26,26 @@ public class MainMenu : MonoBehaviour
             return;
         }
         Application.OpenURL(link);
+    }
+
+    public void PlayAnimation (string animName)
+    {
+        ChangeAnimationState(animName);
+        anim.speed = 1.5f;
+
+        Debug.Log("mouse engtered"+ animName);
+    }
+
+    //Change animation
+    void ChangeAnimationState(string newState)
+    {
+        if (currentState == newState)
+        {
+            return;
+        }
+
+        anim.Play(newState);
+
+        currentState = newState;
     }
 }
