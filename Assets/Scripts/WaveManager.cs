@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
     private float gameSpeed;
     #endregion
 
-    private void Start()
+    void Start()
     {
         waveStarted = false;
         unit2spawned = false;
@@ -57,48 +57,43 @@ public class WaveManager : MonoBehaviour
         gameSpeed = Time.timeScale;
     }
 
-    private void FixedUpdate()
-    {
-        waveSpeedText.text = "SPEED: " + gameSpeed + "x";
-    }
-
-    private void Update()
+    void Update()
     {
         wavestartedtext.text = waveStarted.ToString(); // debug text
         waveNumberText.text = (waveIndex + 1).ToString(); // wave numer 
+        timer.text = spawnTimer.ToString();
 
         if (waveStarted) 
         {
-            WaveBlueprint wave = waves[waveIndex];
-
             spawnTimer += Time.deltaTime;
-            timer.text = spawnTimer.ToString();
-
-            if (wave.u3_prefab == null && wave.u2_prefab == null)
+            WaveBlueprint wave = waves[waveIndex];
+            
+            if (wave.u2_prefab == null)
             {
                 waveStarted = false;
-                spawnTimer = 0f;
+                return;
             }
 
-            if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned && wave.u2_prefab != null)
+            if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned)
             {
                 unit2spawned = true;
-                Debug.Log("unit 2 spawned");
                 StartCoroutine(SpawnEnemyCour_2());
+                Debug.Log("unit 2 spawned");
 
                 if (wave.u3_prefab == null)
                 {
                     waveStarted = false;
-                    spawnTimer = 0f;
+                    Debug.Log("unit3spawned 3 null, wave stopped");
                 }
             }
 
-            if (spawnTimer >= wave.u3_spawnDelay && !unit3spawned && wave.u3_prefab != null)
+            if (spawnTimer >= wave.u3_spawnDelay && !unit3spawned)
             {
                 unit3spawned = true;
-                Debug.Log("unit 3  spawned");
                 StartCoroutine(SpawnEnemyCour_3());
+                Debug.Log("unit 3 spawned");
 
+                waveStarted = false;
             }
         }
 
@@ -168,7 +163,8 @@ public class WaveManager : MonoBehaviour
     void StartWave ()
     {
         waveStarted = true;
-
+        unit2spawned = false;
+        unit3spawned = false;
 
         StartCoroutine(SpawnEnemyCour_1());
     }
