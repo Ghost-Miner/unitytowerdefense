@@ -13,40 +13,34 @@ public class Enemy : MonoBehaviour
 
     public static bool canMove = true;
 
-    // Start is called before the first frame update
     void Start()
     {
         target = Waypoints.waypoints[0];
-        //Debug.Log("Enemy.cs |  HP: " + health);
+    }
+
+    private void OnDestroy()
+    {
+        WaveManager.enemiesAlive--;
+        PlayerStats.money += 10;
     }
 
     public void TakeDamage (int amount)
     {
         health -= amount;
-        //Debug.Log("Enemy.cs | damage: " + amount);
-        //Debug.Log("Enemy.cs | HP: " + health);
 
         if (health <= 0)
         {
             Die();
-            //Debug.Log("Enemy.cs | enemy died");
         }
     }
 
     public void Die()
     {
-        WaveManager.enemiesAlive--;
-        PlayerStats.money += 10;
-
         Destroy(gameObject);
-        
-        //Debug.Log("Enemy.cs | count: " + WaveSpawner.enemiesAlive);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
         if (transform.position.x >= 49)
         {
             PathEnd();
@@ -75,9 +69,6 @@ public class Enemy : MonoBehaviour
     public void PathEnd ()
     {
         PlayerStats.lives--;
-        WaveManager.enemiesAlive--;
-
-        //Debug.Log("Enemy.cs | count: " + WaveSpawner.enemiesAlive);
 
         Destroy(gameObject);
     }

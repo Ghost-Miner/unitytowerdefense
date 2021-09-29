@@ -23,7 +23,4 @@ public class WaveBlueprint
     public int u3_Count;
     public int u3_rate;
     public int u3_spawnDelay;
-
-    [Header("Total number of units")]
-    public int unityCount;
 }

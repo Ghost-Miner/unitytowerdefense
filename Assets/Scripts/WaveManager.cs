@@ -6,14 +6,6 @@ using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
-
-    //----------------------------------
-    // THIS WHOLE SYSTEM IS ONE BIG MESS WHICH DOESNT EVEN WORK PROPERLY
-    // I have no idea what I'm doing
-    // Please send help
-    //-------------------------------
-
-
     #region References and variables
     public WaveBlueprint[] waves;
 
@@ -38,40 +30,39 @@ public class WaveManager : MonoBehaviour
     public GameObject startButton;
     public GameObject speedButton;
 
-    bool unit2spawned;
-    bool unit3spawned;
+    private bool unit2spawned = false;
+    private bool unit3spawned = false;
 
     public TMP_Text timer;
     public TMP_Text wavestartedtext;
     public TMP_Text waveSpeedText;
+    public TMP_Text enemalivetext;
 
     private float gameSpeed;
     #endregion
 
     void Start()
     {
-        waveStarted = false;
-        unit2spawned = false;
-        unit3spawned = false;
-
         gameSpeed = Time.timeScale;
     }
 
     void Update()
     {
-        wavestartedtext.text = waveStarted.ToString(); // debug text
-        waveNumberText.text = (waveIndex + 1).ToString(); // wave numer 
-        timer.text = spawnTimer.ToString();
+        wavestartedtext.text = waveStarted.ToString();      // DEBUG ONLY,  displays waveStarted value
+        waveNumberText.text = (waveIndex + 1).ToString();   // DEBUG ONLY, displays wave nubmer 
+        timer.text = spawnTimer.ToString();                 // DEBUG ONLY, displays the spawn timer
+        enemalivetext.text = enemiesAlive.ToString();
 
-        if (waveStarted) 
+        // Spawn units of type 2 and higher
+        if (waveStarted)
         {
-            spawnTimer += Time.deltaTime;
-            WaveBlueprint wave = waves[waveIndex];
-            
+            spawnTimer += Time.deltaTime;           // Spawns timer
+            WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
+
             if (wave.u2_prefab == null)
             {
                 waveStarted = false;
-                return;
+                    Debug.Log("u2 null stop");
             }
 
             if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned)
@@ -83,7 +74,7 @@ public class WaveManager : MonoBehaviour
                 if (wave.u3_prefab == null)
                 {
                     waveStarted = false;
-                    Debug.Log("unit3spawned 3 null, wave stopped");
+                        Debug.Log("unit3spawned 3 null, wave stopped");
                 }
             }
 
@@ -93,25 +84,24 @@ public class WaveManager : MonoBehaviour
                 StartCoroutine(SpawnEnemyCour_3());
                 Debug.Log("unit 3 spawned");
 
+                    Debug.Log("u2 null stop");
                 waveStarted = false;
             }
         }
 
+        // Change the START WAVE button if there ar eno enemies. UNFINISHED
         if (enemiesAlive > 0 || GameObject.FindWithTag("Enemy") != null)
         {
             startButton.SetActive(false);
             speedButton.SetActive(true);
 
-            //waveStartButton.interactable = false;
-
             if (waveIndex == waves.Length)
             {
-                Invoke("EndGame", 5f);
+                EndGame();
                 Debug.Log("Game won");
             }
             else
             {
-                //Debug.Log("WaveManager | enemies " + enemiesAlive);
                 return;
             }
         }
@@ -123,26 +113,24 @@ public class WaveManager : MonoBehaviour
     {
         startButton.SetActive(true);
         speedButton.SetActive(false);
-
-        //waveStartButton.interactable = true;
     }
 
     public void StartWaveButton()
     {
-        if (enemiesAlive > 0)
+        if (enemiesAlive > 0 || GameObject.FindWithTag("Enemy") != null)
         {
             return;
         }
 
-        StartWave();
+        Debug.Log("wave: : " + waveIndex);
 
-        startButton.SetActive(false);
-        speedButton.SetActive(true);
+        StartWave();
 
         Debug.Log("Starting wave " + (waveIndex));
     }
-
-    public void WaveSpeed ()
+    
+    // Controls speed of the game
+    public void WaveSpeed()
     {
         if (Time.timeScale <= 1f)
         {
@@ -150,7 +138,7 @@ public class WaveManager : MonoBehaviour
             gameSpeed = Time.timeScale;
 
             Debug.Log(gameSpeed);
-        } 
+        }
         else if (Time.timeScale >= 2f)
         {
             Time.timeScale = 1f;
@@ -160,20 +148,30 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void StartWave ()
+    void StartWave()
     {
+        spawnTimer = 0;
+
         waveStarted = true;
         unit2spawned = false;
         unit3spawned = false;
 
+        startButton.SetActive(false);
+        speedButton.SetActive(true);
+
         StartCoroutine(SpawnEnemyCour_1());
     }
 
-    IEnumerator SpawnEnemyCour_1()
+    void EndGame()
+    {
+        Debug.Log("Game won");
+        this.enabled = false;
+    }
+
+    IEnumerator SpawnEnemyCour_1 ()
     {
         WaveBlueprint wave = waves[waveIndex];
-        //enemiesAlive = wave.unityCount;
-        enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count;
+        enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
 
         for (int i = 0; i < wave.u1_Count; i++)
         {
@@ -181,10 +179,10 @@ public class WaveManager : MonoBehaviour
             yield return new WaitForSeconds(1f / wave.u1_rate);
         }
 
-        if (wave.u2_prefab == null && wave.u3_prefab == null)
+        if (wave.u2_prefab == null)
         {
             waveIndex++;
-            Debug.Log("Wave: " + waveIndex);
+            Debug.Log("u1 Wave: " + waveIndex);
 
             if (waveIndex == waves.Length)
             {
@@ -197,19 +195,16 @@ public class WaveManager : MonoBehaviour
     {
         WaveBlueprint wave = waves[waveIndex];
 
-        if (wave.u2_prefab != null)
+        for (int i = 0; i < wave.u2_Count; i++)
         {
-            for (int i = 0; i < wave.u2_Count; i++)
-            {
                 SpawnEnemy(wave.u2_prefab);
                 yield return new WaitForSeconds(1f / wave.u2_rate);
-            }
         }
 
-        if (wave.u2_prefab != null && wave.u3_prefab == null)
+        if (wave.u3_prefab == null)
         {
             waveIndex++;
-            Debug.Log("Wave: " + waveIndex);
+            Debug.Log("u2 Wave: " + waveIndex);
 
             if (waveIndex == waves.Length)
             {
@@ -231,10 +226,10 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        if (wave.u2_prefab == null && wave.u3_prefab != null)
+        if (wave.u3_prefab != null)
         {
-            //waveIndex++;
-            Debug.Log("Wave: " + waveIndex);
+            waveIndex++;
+            Debug.Log("u3 Wave: " + waveIndex);
 
             if (waveIndex == waves.Length)
             {
@@ -244,16 +239,10 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void SpawnEnemy (GameObject unit)
+    void SpawnEnemy(GameObject unit)
     {
         Instantiate(unit, spawnPoint.position, spawnPoint.rotation);
 
         //Debug.Log("Unit method called");
-    }
-
-    void EndGame()
-    {
-        Debug.Log("Game won");
-        this.enabled = false;
     }
 }

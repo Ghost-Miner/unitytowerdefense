@@ -6897,20 +6897,19 @@ MonoBehaviour:
       type: 3}
     u1_Count: 5
     u1_rate: 2
-    u2_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
+    u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
       type: 3}
-    u2_Count: 6
-    u2_rate: 2
-    u2_spawnDelay: 3
-    u3_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
+    u2_Count: 1
+    u2_rate: 1
+    u2_spawnDelay: 5
+    u3_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
       type: 3}
-    u3_Count: 5
+    u3_Count: 1
     u3_rate: 1
-    u3_spawnDelay: 5
-    unityCount: 0
+    u3_spawnDelay: 15
   - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
       type: 3}
-    u1_Count: 10
+    u1_Count: 5
     u1_rate: 2
     u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
       type: 3}
@@ -6921,7 +6920,6 @@ MonoBehaviour:
     u3_Count: 0
     u3_rate: 0
     u3_spawnDelay: 0
-    unityCount: 12
   - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
       type: 3}
     u1_Count: 5
@@ -6936,7 +6934,6 @@ MonoBehaviour:
     u3_Count: 3
     u3_rate: 1
     u3_spawnDelay: 10
-    unityCount: 0
   spawnPoint: {fileID: 977640532}
   waveNumberText: {fileID: 1364967689}
   waveStartButton: {fileID: 1800037348}
@@ -6947,6 +6944,7 @@ MonoBehaviour:
   timer: {fileID: 366314393}
   wavestartedtext: {fileID: 978594793}
   waveSpeedText: {fileID: 851378787}
+  enemalivetext: {fileID: 851378787}
 --- !u!4 &1386783835
 Transform:
   m_ObjectHideFlags: 0
@@ -18199,7 +18197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1911701503
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18288,7 +18286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.39215687}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -19835,6 +19833,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game UI (Canvas)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155720318247304901, guid: cddcc292709d9cb4889c794dcf09bcfb,
+        type: 3}
+      propertyPath: m_text
+      value: START WAVE
       objectReference: {fileID: 0}
     - target: {fileID: 9155720318642162833, guid: cddcc292709d9cb4889c794dcf09bcfb,
         type: 3}
