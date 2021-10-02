@@ -26,7 +26,11 @@ public class TurretButton : MonoBehaviour
     {
         bool afford = shop.CanAfford(towerName);
         
-        if (!afford)
+        if (afford)
+        {
+            button.interactable = true;
+        }
+        else
         {
             button.interactable = false;
         }

@@ -9,34 +9,30 @@ public class WaveManager : MonoBehaviour
     #region References and variables
     public WaveBlueprint[] waves;
 
-    //public Transform startPoint;
-    public Transform spawnPoint;
+    public static int  enemiesAlive = 0;
+    public        bool waveAutoStart;
 
-    //public TMP_Text waveCountdownText;
-    public TMP_Text waveNumberText;
-
-    [SerializeField] private Button waveStartButton;
-    [SerializeField] private TMP_Text waveStartBtnText;
-
-    public static int enemiesAlive = 0;
-
-    //public float timeBeterrmWaves = 5.5f;
-    private float spawnTimer = 0f;
-
-    private int waveIndex = 0;
-    public bool waveAutoStart;
-    private bool waveStarted = false;
-
+    public TMP_Text   waveNumberText;
     public GameObject startButton;
     public GameObject speedButton;
 
-    private bool unit2spawned = false;
-    private bool unit3spawned = false;
+    private float spawnTimer = 0f;
+    private int   waveIndex = 0;
+    private bool  waveStarted = false;
 
-    public TMP_Text timer;
-    public TMP_Text wavestartedtext;
-    public TMP_Text waveSpeedText;
-    public TMP_Text enemalivetext;
+    private bool  unit2spawned = false;
+    private bool  unit3spawned = false;
+
+    [SerializeField] private Button    waveStartButton;
+    [SerializeField] private TMP_Text  waveStartBtnText;
+    [SerializeField] private Transform spawnPoint;
+
+    //public TMP_Text waveSpeedText;
+
+    [Header ("Debug info")]
+    [SerializeField] private TMP_Text timer;
+    [SerializeField] private TMP_Text wavestartedtext;
+    [SerializeField] private TMP_Text enemalivetext;
 
     private float gameSpeed;
     #endregion
