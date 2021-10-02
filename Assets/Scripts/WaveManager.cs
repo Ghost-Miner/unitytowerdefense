@@ -48,21 +48,21 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        wavestartedtext.text = waveStarted.ToString();      // DEBUG ONLY,  displays waveStarted value
-        waveNumberText.text = (waveIndex + 1).ToString();   // DEBUG ONLY, displays wave nubmer 
-        timer.text = spawnTimer.ToString();                 // DEBUG ONLY, displays the spawn timer
-        enemalivetext.text = enemiesAlive.ToString();
+        wavestartedtext.text = waveStarted.ToString();      // DEBUG ONLY, displays waveStarted value.
+        waveNumberText.text = (waveIndex + 1).ToString();   // GAME STATS, Wave number ,but starts from 1.
+        timer.text = spawnTimer.ToString();                 // DEBUG ONLY, displays the spawn timer.
+        enemalivetext.text = enemiesAlive.ToString();       // DEBUG ONLY, displays number of living enemies
 
         // Spawn units of type 2 and higher
         if (waveStarted)
         {
+            Debug.Log(waveIndex);
             spawnTimer += Time.deltaTime;           // Spawns timer
             WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
 
             if (wave.u2_prefab == null)
             {
                 waveStarted = false;
-                    Debug.Log("u2 null stop");
             }
 
             if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned)
@@ -74,7 +74,6 @@ public class WaveManager : MonoBehaviour
                 if (wave.u3_prefab == null)
                 {
                     waveStarted = false;
-                        Debug.Log("unit3spawned 3 null, wave stopped");
                 }
             }
 
@@ -84,7 +83,6 @@ public class WaveManager : MonoBehaviour
                 StartCoroutine(SpawnEnemyCour_3());
                 Debug.Log("unit 3 spawned");
 
-                    Debug.Log("u2 null stop");
                 waveStarted = false;
             }
         }
