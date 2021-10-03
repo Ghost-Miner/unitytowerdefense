@@ -12,6 +12,8 @@ public class TurretButton : MonoBehaviour
     [SerializeField] private string towerName;
     private Button button;
 
+    private bool infoPanelVisible;
+
     //public PlayerStats playerStats;
 
     private void Start()
@@ -36,7 +38,21 @@ public class TurretButton : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
+    public void ToggleInfoPanel ()
+    {        
+        if (!infoPanelVisible)
+        {
+            infoPanel.SetActive(true);
+        }
+        else
+        {
+            infoPanel.SetActive(false);
+        }
+
+        infoPanelVisible = !infoPanelVisible;
+    }
+
+    /*private void OnMouseEnter()
     {
         infoPanel.SetActive(true);
         Debug.Log("enabled");
@@ -46,5 +62,5 @@ public class TurretButton : MonoBehaviour
     {
         infoPanel.SetActive(false);
         Debug.Log("disabled");
-    }
+    }*/
 }

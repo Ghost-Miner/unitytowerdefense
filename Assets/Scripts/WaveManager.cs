@@ -44,10 +44,11 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        wavestartedtext.text = waveStarted.ToString();      // DEBUG ONLY, displays waveStarted value.
         waveNumberText.text = (waveIndex + 1).ToString();   // GAME STATS, Wave number ,but starts from 1.
-        timer.text = spawnTimer.ToString();                 // DEBUG ONLY, displays the spawn timer.
-        enemalivetext.text = enemiesAlive.ToString();       // DEBUG ONLY, displays number of living enemies
+
+        wavestartedtext.text = "waveStarted: " + waveStarted;     // DEBUG ONLY, displays waveStarted value.
+        timer.text           = "spawnTime: "   + spawnTimer;      // DEBUG ONLY, displays the spawn timer.
+        enemalivetext.text   = "eneiesAlive: " + enemiesAlive;    // DEBUG ONLY, displays number of living enemies
 
         // Spawn units of type 2 and higher
         if (waveStarted)
