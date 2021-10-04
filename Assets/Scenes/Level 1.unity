@@ -6512,46 +6512,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u1_Count: 5
-    u1_rate: 2
-    u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
-      type: 3}
-    u2_Count: 1
-    u2_rate: 1
-    u2_spawnDelay: 5
-    u3_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
-      type: 3}
-    u3_Count: 1
-    u3_rate: 1
-    u3_spawnDelay: 15
-  - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u1_Count: 10
-    u1_rate: 3
-    u2_prefab: {fileID: 0}
-    u2_Count: 0
-    u2_rate: 1
-    u2_spawnDelay: 5
-    u3_prefab: {fileID: 0}
-    u3_Count: 0
-    u3_rate: 0
-    u3_spawnDelay: 0
-  - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u1_Count: 5
-    u1_rate: 2
-    u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
-      type: 3}
-    u2_Count: 2
-    u2_rate: 1
-    u2_spawnDelay: 5
-    u3_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
-      type: 3}
-    u3_Count: 3
-    u3_rate: 1
-    u3_spawnDelay: 10
+  - unit_prefabs:
+    - {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b, type: 3}
+    unit_counts: 05000000
+    unit_spawnRates:
+    - 2
+  - unit_prefabs: []
+    unit_counts: 
+    unit_spawnRates: []
+  - unit_prefabs: []
+    unit_counts: 
+    unit_spawnRates: []
   waveAutoStart: 0
   waveNumberText: {fileID: 1364967689}
   startButton: {fileID: 10996642}
@@ -19360,6 +19331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632007310983970546, guid: cddcc292709d9cb4889c794dcf09bcfb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 187
       objectReference: {fileID: 0}
     - target: {fileID: 2137186249109050251, guid: cddcc292709d9cb4889c794dcf09bcfb,
         type: 3}

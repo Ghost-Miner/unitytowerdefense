@@ -35,11 +35,13 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private TMP_Text enemalivetext;
 
     private float gameSpeed;
+
+    int currentUnitIndex = 0;
     #endregion
 
     void Start()
     {
-        gameSpeed = Time.timeScale;
+        
     }
 
     void Update()
@@ -53,11 +55,10 @@ public class WaveManager : MonoBehaviour
         // Spawn units of type 2 and higher
         if (waveStarted)
         {
-            Debug.Log(waveIndex);
             spawnTimer += Time.deltaTime;           // Spawns timer
             WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
 
-            if (wave.u2_prefab == null)
+            /*if (wave.u2_prefab == null)
             {
                 waveStarted = false;
             }
@@ -65,7 +66,7 @@ public class WaveManager : MonoBehaviour
             if (spawnTimer >= wave.u2_spawnDelay && !unit2spawned)
             {
                 unit2spawned = true;
-                StartCoroutine(SpawnEnemyCour_2());
+                //StartCoroutine(SpawnEnemyCour_2());
                 Debug.Log("unit 2 spawned");
 
                 if (wave.u3_prefab == null)
@@ -77,11 +78,11 @@ public class WaveManager : MonoBehaviour
             if (spawnTimer >= wave.u3_spawnDelay && !unit3spawned)
             {
                 unit3spawned = true;
-                StartCoroutine(SpawnEnemyCour_3());
+                //StartCoroutine(SpawnEnemyCour_3());
                 Debug.Log("unit 3 spawned");
 
-                waveStarted = false;
-            }
+                //waveStarted = false;
+            }*/
         }
 
         // Change the START WAVE button if there ar eno enemies. UNFINISHED
@@ -90,15 +91,6 @@ public class WaveManager : MonoBehaviour
             startButton.SetActive(false);
             speedButton.SetActive(true);
 
-            if (waveIndex == waves.Length)
-            {
-                EndGame();
-                Debug.Log("Game won");
-            }
-            else
-            {
-                return;
-            }
         }
 
         EnableButton();
@@ -147,14 +139,14 @@ public class WaveManager : MonoBehaviour
     {
         spawnTimer = 0;
 
-        waveStarted = true;
+        //waveStarted = true;
         unit2spawned = false;
         unit3spawned = false;
 
         startButton.SetActive(false);
         speedButton.SetActive(true);
 
-        StartCoroutine(SpawnEnemyCour_1());
+        StartCoroutine(EnemySpawnRoutine());
     }
 
     void EndGame()
@@ -163,7 +155,37 @@ public class WaveManager : MonoBehaviour
         this.enabled = false;
     }
 
-    IEnumerator SpawnEnemyCour_1 ()
+
+    IEnumerator EnemySpawnRoutine()
+    {
+        foreach (WaveBlueprint wave in waves)
+        {
+            //enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
+
+            for (int i = 0; i < wave.unit_counts.Length; i++)
+            {
+                enemiesAlive += wave.unit_counts[i];
+                Debug.Log("enemies" + enemiesAlive);
+            }
+
+            //int currentUnitIndex = 0;
+
+            for (int currentUnitIndex = 0; currentUnitIndex < wave.unit_prefabs.Length; currentUnitIndex++)
+            {
+                for (int i = 0; i < wave.unit_counts[currentUnitIndex]; i++)
+                {
+                    SpawnEnemy(wave.unit_prefabs[currentUnitIndex]);
+                    yield return new WaitForSeconds(1f / wave.unit_spawnRates[currentUnitIndex]);
+                }
+            }
+
+        }
+        //Invoke("EndGame", 5f);
+        //Debug.Log("Game won");
+    }
+
+
+    /*IEnumerator SpawnEnemyCour_1 ()
     {
         WaveBlueprint wave = waves[waveIndex];
         enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
@@ -208,6 +230,7 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
+
     IEnumerator SpawnEnemyCour_3 ()
     {
         WaveBlueprint wave = waves[waveIndex];
@@ -232,7 +255,7 @@ public class WaveManager : MonoBehaviour
                 Debug.Log("Game won");
             }
         }
-    }
+    }*/
 
     void SpawnEnemy(GameObject unit)
     {

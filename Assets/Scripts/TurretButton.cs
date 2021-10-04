@@ -21,7 +21,6 @@ public class TurretButton : MonoBehaviour
         button = GetComponent<Button>(); 
 
         infoPanel = transform.GetChild(1).gameObject;
-        Debug.Log(infoPanel);
     }
 
     private void Update()

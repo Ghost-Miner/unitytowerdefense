@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
     {
         defaultCamPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
-        Debug.Log("CAMERA POS.: " + defaultCamPosition);
+        //Debug.Log("CAMERA POS.: " + defaultCamPosition);
     }
 
     public void ResetCameraPosition ()
