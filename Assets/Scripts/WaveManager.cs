@@ -180,6 +180,8 @@ public class WaveManager : MonoBehaviour
             }
 
         }
+
+        Debug.Log("wave end" + waveIndex);
         //Invoke("EndGame", 5f);
         //Debug.Log("Game won");
     }

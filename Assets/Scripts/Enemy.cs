@@ -22,8 +22,6 @@ public class Enemy : MonoBehaviour
     {
         WaveManager.enemiesAlive--;
         PlayerStats.money += 10;
-
-        Debug.Log("destroyed");
     }
 
     public void TakeDamage (int amount)
