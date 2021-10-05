@@ -20,8 +20,8 @@ public class WaveManager : MonoBehaviour
     private int   waveIndex = 0;
     private bool  waveStarted = false;
 
-    private bool  unit2spawned = false;
-    private bool  unit3spawned = false;
+    //private bool  unit2spawned = false;
+    //private bool  unit3spawned = false;
 
     [SerializeField] private Button    waveStartButton;
     [SerializeField] private TMP_Text  waveStartBtnText;
@@ -35,8 +35,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private TMP_Text enemalivetext;
 
     private float gameSpeed;
-
-    int currentUnitIndex = 0;
     #endregion
 
     void Start()
@@ -52,13 +50,18 @@ public class WaveManager : MonoBehaviour
         timer.text           = "spawnTime: "   + spawnTimer;      // DEBUG ONLY, displays the spawn timer.
         enemalivetext.text   = "eneiesAlive: " + enemiesAlive;    // DEBUG ONLY, displays number of living enemies
 
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            waveStarted = true;
+        }
+
         // Spawn units of type 2 and higher
         if (waveStarted)
         {
             spawnTimer += Time.deltaTime;           // Spawns timer
-            WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
+            /*WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
 
-            /*if (wave.u2_prefab == null)
+            if (wave.u2_prefab == null)
             {
                 waveStarted = false;
             }
@@ -86,11 +89,12 @@ public class WaveManager : MonoBehaviour
         }
 
         // Change the START WAVE button if there ar eno enemies. UNFINISHED
-        if (enemiesAlive > 0 || GameObject.FindWithTag("Enemy") != null)
+        if (enemiesAlive > 0 && GameObject.FindWithTag("Enemy") != null)
         {
             startButton.SetActive(false);
             speedButton.SetActive(true);
 
+            return;
         }
 
         EnableButton();
@@ -139,9 +143,7 @@ public class WaveManager : MonoBehaviour
     {
         spawnTimer = 0;
 
-        //waveStarted = true;
-        unit2spawned = false;
-        unit3spawned = false;
+        waveStarted = true;
 
         startButton.SetActive(false);
         speedButton.SetActive(true);
@@ -158,7 +160,9 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator EnemySpawnRoutine()
     {
-        foreach (WaveBlueprint wave in waves)
+        WaveBlueprint waveBlueprint = waves[waveIndex];
+
+        foreach (var wave in waves)
         {
             //enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
 
@@ -179,9 +183,13 @@ public class WaveManager : MonoBehaviour
                 }
             }
 
+            waveStarted = false;
+            Debug.Log("wave end" + waveIndex);
+            
+            yield return new WaitUntil(() => waveStarted == true);
+            waveIndex++;
         }
 
-        Debug.Log("wave end" + waveIndex);
         //Invoke("EndGame", 5f);
         //Debug.Log("Game won");
     }
