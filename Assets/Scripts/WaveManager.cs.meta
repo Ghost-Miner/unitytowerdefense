@@ -3,7 +3,18 @@ guid: 5ce78f5733d1a9349ab3f024062417fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - waveNumberText: {instanceID: 0}
+  - startButton: {instanceID: 0}
+  - speedButton: {instanceID: 0}
+  - waveStartButton: {instanceID: 0}
+  - waveStartBtnText: {instanceID: 0}
+  - spawnPoint: {instanceID: 0}
+  - timer: {instanceID: 0}
+  - wavestartedtext: {instanceID: 0}
+  - enemalivetext: {instanceID: 0}
+  - unitPlaceholder: {fileID: 2966821891275867827, guid: 2b42d739e5330f64d87bc581fcf4fc74,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,11 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class WaveBlueprint
 {
-    public GameObject[] unit_prefabs;
+   /* public GameObject[] unit_prefabs;
     public int[]        unit_counts;
-    public float[]      unit_spawnRates;
+    public float[]      unit_spawnRates;*/
 
-    /*[Header("Unit 1")]
+    [Header("Unit 1")]
     public GameObject u1_prefab;
     public int u1_Count;
     public int u1_rate;
@@ -24,5 +24,5 @@ public class WaveBlueprint
     public GameObject u3_prefab;
     public int u3_Count;
     public int u3_rate;
-    public int u3_spawnDelay;*/
+    public int u3_spawnDelay;
 }

@@ -34,6 +34,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private TMP_Text wavestartedtext;
     [SerializeField] private TMP_Text enemalivetext;
 
+    public GameObject unitPlaceholder;
+
     private float gameSpeed;
     #endregion
 
@@ -55,11 +57,12 @@ public class WaveManager : MonoBehaviour
             waveStarted = true;
         }
 
+        #region OBSOLETE
         // Spawn units of type 2 and higher
-        if (waveStarted)
+        /*if (waveStarted)
         {
             spawnTimer += Time.deltaTime;           // Spawns timer
-            /*WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
+            WaveBlueprint wave = waves[waveIndex];  // Wave blueprint array
 
             if (wave.u2_prefab == null)
             {
@@ -85,15 +88,13 @@ public class WaveManager : MonoBehaviour
                 Debug.Log("unit 3 spawned");
 
                 //waveStarted = false;
-            }*/
-        }
+            }
+        }*/
+        #endregion
 
-        // Change the START WAVE button if there ar eno enemies. UNFINISHED
-        if (enemiesAlive > 0 && GameObject.FindWithTag("Enemy") != null)
+        if (enemiesAlive > 0 || GameObject.FindWithTag("Enemy") != null)
         {
-            startButton.SetActive(false);
-            speedButton.SetActive(true);
-
+            DisableButton();
             return;
         }
 
@@ -104,6 +105,11 @@ public class WaveManager : MonoBehaviour
     {
         startButton.SetActive(true);
         speedButton.SetActive(false);
+    }
+    void DisableButton()
+    {
+        startButton.SetActive(false);
+        speedButton.SetActive(true);
     }
 
     public void StartWaveButton()
@@ -148,7 +154,7 @@ public class WaveManager : MonoBehaviour
         startButton.SetActive(false);
         speedButton.SetActive(true);
 
-        StartCoroutine(EnemySpawnRoutine());
+        StartCoroutine(WaveSpawn());
     }
 
     void EndGame()
@@ -158,21 +164,22 @@ public class WaveManager : MonoBehaviour
     }
 
 
-    IEnumerator EnemySpawnRoutine()
+    /*IEnumerator EnemySpawnRoutine()
     {
         WaveBlueprint waveBlueprint = waves[waveIndex];
 
         foreach (var wave in waves)
         {
-            //enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
+            if (waveIndex > waves.Length)
+            {
+                Debug.Log("Game won");
+                StopCoroutine(EnemySpawnRoutine());
+            }
 
             for (int i = 0; i < wave.unit_counts.Length; i++)
             {
                 enemiesAlive += wave.unit_counts[i];
-                Debug.Log("enemies" + enemiesAlive);
             }
-
-            //int currentUnitIndex = 0;
 
             for (int currentUnitIndex = 0; currentUnitIndex < wave.unit_prefabs.Length; currentUnitIndex++)
             {
@@ -181,19 +188,76 @@ public class WaveManager : MonoBehaviour
                     SpawnEnemy(wave.unit_prefabs[currentUnitIndex]);
                     yield return new WaitForSeconds(1f / wave.unit_spawnRates[currentUnitIndex]);
                 }
-            }
 
+                yield return new WaitForSeconds(2f);
+            }
+            
             waveStarted = false;
-            Debug.Log("wave end" + waveIndex);
+
+            //Debug.Log("wave end" + waveIndex);
             
             yield return new WaitUntil(() => waveStarted == true);
             waveIndex++;
         }
 
         //Invoke("EndGame", 5f);
-        //Debug.Log("Game won");
-    }
+        Debug.Log("GAME END won");
+    }*/
 
+    IEnumerator WaveSpawn ()
+    {
+        WaveBlueprint wave = waves[waveIndex];
+        enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
+
+        if (wave.u2_prefab == null)
+        {
+            Debug.Log("u2 null");
+            wave.u2_prefab = unitPlaceholder;
+            wave.u2_Count = 0;
+        }
+        if (wave.u3_prefab == null)
+        {
+            Debug.Log("u3 null");
+            wave.u3_prefab = unitPlaceholder;
+            wave.u3_Count = 0;
+        }
+
+        Debug.Log("unit 1 spawn");
+        for (int i = 0; i < wave.u1_Count; i++)
+        {
+            Instantiate(wave.u1_prefab, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(1f / wave.u1_rate);
+        }
+        yield return new WaitForSeconds(3f);
+
+        Debug.Log("unit 2 spawn");
+        for (int i = 0; i < wave.u2_Count; i++)
+        {
+            Instantiate(wave.u2_prefab, spawnPoint.position, spawnPoint.rotation);
+            yield return new WaitForSeconds(1f / wave.u2_rate);
+        }
+        yield return new WaitForSeconds(3f);
+
+        Debug.Log("unit 3 spawn");
+        if (wave.u3_prefab != null)
+        {
+            for (int i = 0; i < wave.u3_Count; i++)
+            {
+                Instantiate(wave.u3_prefab, spawnPoint.position, spawnPoint.rotation);
+                yield return new WaitForSeconds(1f / wave.u3_rate);
+            }
+        }
+
+        yield return new WaitForSeconds(1f);
+        Debug.Log("wave " + waveIndex + "ended");
+        waveIndex++;
+
+        if (waveIndex == waves.Length)
+        {
+            DisableButton();
+            Debug.Log("Game won");
+        }
+    }
 
     /*IEnumerator SpawnEnemyCour_1 ()
     {
@@ -217,6 +281,16 @@ public class WaveManager : MonoBehaviour
                 Debug.Log("Game won");
             }
         }
+        
+        if (wave.u3_prefab != null)
+        {
+            for (int i = 0; i < wave.u3_Count; i++)
+            {
+                SpawnEnemy(wave.u3_prefab);
+                yield return new WaitForSeconds(1f / wave.u3_rate);
+            }
+        }
+
     }
     IEnumerator SpawnEnemyCour_2 ()
     {
