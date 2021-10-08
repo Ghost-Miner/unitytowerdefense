@@ -16,18 +16,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject hideEdgesCanvas;
 
-    public TMP_Text fpsDisplay;                     //FPS meter
+    public TMP_Text fpsDisplay;
     public TMP_Text versionText;
-
-    float time;
-
-    ///ObjectPooler objectPooler; 
 
     private void Start()
     {
         versionText.text = versionName;
         hideEdgesCanvas.SetActive(true);
-        ///objectPooler = ObjectPooler.Instance;
     }
 
     void Update()
@@ -35,8 +30,6 @@ public class GameManager : MonoBehaviour
         // Display FPS
         int fps = (int)(1f / Time.unscaledDeltaTime);
         fpsDisplay.text = "FPS: " + fps;
-
-        //objectPooler.SpawnFromPool("Yellow", transform.position, Quaternion.identity);
 
         if (gameEnded)
         {

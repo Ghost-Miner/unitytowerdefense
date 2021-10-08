@@ -458,6 +458,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9155720317110611829}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &87847480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1177122173245237614, guid: cddcc292709d9cb4889c794dcf09bcfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9155720317110611829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87847478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &99409583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6459,8 +6471,7 @@ MonoBehaviour:
     u2_Count: 5
     u2_rate: 3
     u2_spawnDelay: 0
-    u3_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
-      type: 3}
+    u3_prefab: {fileID: 0}
     u3_Count: 5
     u3_rate: 3
     u3_spawnDelay: 0
@@ -6482,13 +6493,15 @@ MonoBehaviour:
   waveNumberText: {fileID: 1364967689}
   startButton: {fileID: 10996642}
   speedButton: {fileID: 87847478}
-  waveStartButton: {fileID: 1800037348}
-  waveStartBtnText: {fileID: 1136693680}
   spawnPoint: {fileID: 977640532}
-  timer: {fileID: 9155720317110611832}
+  waveStartButton: {fileID: 1800037348}
+  waveSpeedButton: {fileID: 87847480}
+  speedImage: {fileID: 1813421160}
+  waveStartBtnText: {fileID: 1136693680}
+  waveSpeedText: {fileID: 2140678251}
+  waveIndexText: {fileID: 9155720317110611832}
   wavestartedtext: {fileID: 9155720317110611831}
   enemalivetext: {fileID: 9155720317110611830}
-  unitPlaceholder: {fileID: 0}
 --- !u!4 &1386783835
 Transform:
   m_ObjectHideFlags: 0
@@ -7189,7 +7202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16862746, g: 0.18039216, b: 0.18823531, a: 0.78431374}
+  m_Color: {r: 0.16862746, g: 0.18039216, b: 0.18823531, a: 1}
   m_RaycastTarget: 0
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -12714,6 +12727,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1813421160 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7177933973713268024, guid: cddcc292709d9cb4889c794dcf09bcfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9155720317110611829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1839660859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9155720318542843982, guid: cddcc292709d9cb4889c794dcf09bcfb,
@@ -18737,6 +18756,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2115912920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140678251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 397662880166966447, guid: cddcc292709d9cb4889c794dcf09bcfb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9155720317110611829}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2140762724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19008,6 +19039,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177122173245237614, guid: cddcc292709d9cb4889c794dcf09bcfb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1386783834}
+    - target: {fileID: 1177122173245237614, guid: cddcc292709d9cb4889c794dcf09bcfb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: WaveSpeed
       objectReference: {fileID: 0}
     - target: {fileID: 1337743956245751721, guid: cddcc292709d9cb4889c794dcf09bcfb,
         type: 3}
@@ -19293,6 +19334,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Game UI (Canvas)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155720318241904822, guid: cddcc292709d9cb4889c794dcf09bcfb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 9155720318247304901, guid: cddcc292709d9cb4889c794dcf09bcfb,
         type: 3}

@@ -476,7 +476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -513,8 +513,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.39215687, g: 0.39215687, b: 0.39215687, a: 1}
-    m_PressedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    m_HighlightedColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+    m_PressedColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.39215687}
     m_ColorMultiplier: 1
@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 8178383779490990290}
   - component: {fileID: 3958407509341223221}
   m_Layer: 5
-  m_Name: spawnTimer
+  m_Name: waveIndex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*spawnTimer*'
+  m_text: '*waveIndex*'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6f4b2221989ef94c80595ede0e94d57, type: 2}
   m_sharedMaterial: {fileID: 8963475446806293772, guid: b6f4b2221989ef94c80595ede0e94d57,
@@ -1444,7 +1444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &818070907455101179
 RectTransform:
   m_ObjectHideFlags: 0
