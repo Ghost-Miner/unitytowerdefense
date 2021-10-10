@@ -6420,102 +6420,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378221460}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1386783833
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1386783835}
-  - component: {fileID: 1386783834}
-  m_Layer: 0
-  m_Name: WaveManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1386783834
+--- !u!114 &1386783834 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2689929491738058473}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386783833}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ce78f5733d1a9349ab3f024062417fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u1_Count: 5
-    u1_rate: 2
-    u2_prefab: {fileID: 0}
-    u2_Count: 2
-    u2_rate: 0
-    u2_spawnDelay: 0
-    u3_prefab: {fileID: 0}
-    u3_Count: 1
-    u3_rate: 0
-    u3_spawnDelay: 0
-  - u1_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
-      type: 3}
-    u1_Count: 5
-    u1_rate: 1
-    u2_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u2_Count: 5
-    u2_rate: 3
-    u2_spawnDelay: 0
-    u3_prefab: {fileID: 0}
-    u3_Count: 5
-    u3_rate: 3
-    u3_spawnDelay: 0
-  - u1_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
-      type: 3}
-    u1_Count: 7
-    u1_rate: 3
-    u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
-      type: 3}
-    u2_Count: 3
-    u2_rate: 1
-    u2_spawnDelay: 0
-    u3_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
-      type: 3}
-    u3_Count: 10
-    u3_rate: 3
-    u3_spawnDelay: 0
-  waveAutoStart: 0
-  waveNumberText: {fileID: 1364967689}
-  startButton: {fileID: 10996642}
-  speedButton: {fileID: 87847478}
-  spawnPoint: {fileID: 977640532}
-  waveStartButton: {fileID: 1800037348}
-  waveSpeedButton: {fileID: 87847480}
-  speedImage: {fileID: 1813421160}
-  waveStartBtnText: {fileID: 1136693680}
-  waveSpeedText: {fileID: 2140678251}
-  waveIndexText: {fileID: 9155720317110611832}
-  wavestartedtext: {fileID: 9155720317110611831}
-  enemalivetext: {fileID: 9155720317110611830}
---- !u!4 &1386783835
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386783833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.192577, y: 40, z: -18.918856}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1394266865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18843,6 +18759,135 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2140762724}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2689929491738058473
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2689929490419448496, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_Name
+      value: WaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.192577
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.918856
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448498, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: spawnPoint
+      value: 
+      objectReference: {fileID: 977640532}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: speedImage
+      value: 
+      objectReference: {fileID: 1813421160}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: speedButton
+      value: 
+      objectReference: {fileID: 87847478}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 10996642}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: enemalivetext
+      value: 
+      objectReference: {fileID: 9155720317110611830}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveIndexText
+      value: 
+      objectReference: {fileID: 9155720317110611832}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveSpeedText
+      value: 
+      objectReference: {fileID: 2140678251}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveNumberText
+      value: 
+      objectReference: {fileID: 1364967689}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveSpeedButton
+      value: 
+      objectReference: {fileID: 87847480}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveStartButton
+      value: 
+      objectReference: {fileID: 1800037348}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: wavestartedtext
+      value: 
+      objectReference: {fileID: 9155720317110611831}
+    - target: {fileID: 2689929490419448499, guid: 3a1019b8dbdda8d4fa7ae085617a010d,
+        type: 3}
+      propertyPath: waveStartBtnText
+      value: 
+      objectReference: {fileID: 1136693680}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3a1019b8dbdda8d4fa7ae085617a010d, type: 3}
 --- !u!1001 &2734853953119237066
 PrefabInstance:
   m_ObjectHideFlags: 0

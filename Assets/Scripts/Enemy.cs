@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        target = Waypoints.waypoints[0];
+        //target = Waypoints.waypoints[0];
     }
 
     private void OnDestroy()
@@ -46,13 +46,13 @@ public class Enemy : MonoBehaviour
             PathEnd();
         }
 
-        Vector3 direction = target.position - transform.position;
+        /*Vector3 direction = target.position - transform.position;
         transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.75f)
         {
             GetNextWayPoint();
-        }
+        }*/
     }
 
     void GetNextWayPoint()

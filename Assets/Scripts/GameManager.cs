@@ -3,21 +3,20 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    string versionName = "some verision";
+    private string versionName = "some verision";
 
-    bool gameEnded = false;
-    bool isPaused = false;
+    private bool gameEnded = false;
+    private bool isPaused = false;
 
-    public GameObject pausePanel;
-    public GameObject shopPaael;
-    public GameObject pauseButton;
+    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject HudPanel;
 
     public Animator shopPanelAnimator;
 
     [SerializeField] private GameObject hideEdgesCanvas;
 
-    public TMP_Text fpsDisplay;
-    public TMP_Text versionText;
+    [SerializeField] private TMP_Text fpsDisplay;
+    [SerializeField] private TMP_Text versionText;
 
     private void Start()
     {
@@ -60,8 +59,8 @@ public class GameManager : MonoBehaviour
         isPaused = true;
 
         pausePanel.SetActive(true);
-        pauseButton.SetActive(false);
-        //shopPaael.SetActive(false);
+        HudPanel.SetActive(false);
+
         shopPanelAnimator.SetTrigger("hide");
 
         Time.timeScale = 0f;
@@ -72,8 +71,8 @@ public class GameManager : MonoBehaviour
         isPaused = false;
 
         pausePanel.SetActive(false);
-        pauseButton.SetActive(true);
-        //shopPaael.SetActive(true);
+        HudPanel.SetActive(true);
+
         shopPanelAnimator.SetTrigger("show");
 
         Time.timeScale = 1f;

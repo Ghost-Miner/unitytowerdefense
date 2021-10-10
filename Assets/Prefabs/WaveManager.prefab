@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2689929490419448496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2689929490419448498}
+  - component: {fileID: 2689929490419448499}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2689929490419448498
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689929490419448496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 20.192577, y: 40, z: -18.918856}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2689929490419448499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689929490419448496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce78f5733d1a9349ab3f024062417fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - u1_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
+      type: 3}
+    u1_Count: 5
+    u1_rate: 2
+    u2_prefab: {fileID: 0}
+    u2_Count: 2
+    u2_rate: 0
+    u2_spawnDelay: 0
+    u3_prefab: {fileID: 0}
+    u3_Count: 1
+    u3_rate: 0
+    u3_spawnDelay: 0
+  - u1_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
+      type: 3}
+    u1_Count: 5
+    u1_rate: 1
+    u2_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
+      type: 3}
+    u2_Count: 5
+    u2_rate: 3
+    u2_spawnDelay: 0
+    u3_prefab: {fileID: 0}
+    u3_Count: 5
+    u3_rate: 3
+    u3_spawnDelay: 0
+  - u1_prefab: {fileID: 2966821891275867827, guid: 22a2d9d5a8f40014f994aa4101ffe787,
+      type: 3}
+    u1_Count: 7
+    u1_rate: 3
+    u2_prefab: {fileID: 2966821891275867827, guid: 49a44f196e794d9418f48381f222233a,
+      type: 3}
+    u2_Count: 3
+    u2_rate: 1
+    u2_spawnDelay: 0
+    u3_prefab: {fileID: 2966821891275867827, guid: 45a97dc2b74a8774288cc5a46c67078b,
+      type: 3}
+    u3_Count: 10
+    u3_rate: 3
+    u3_spawnDelay: 0
+  waveAutoStart: 0
+  waveNumberText: {fileID: 0}
+  startButton: {fileID: 0}
+  speedButton: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  waveStartButton: {fileID: 0}
+  waveSpeedButton: {fileID: 0}
+  speedImage: {fileID: 0}
+  waveStartBtnText: {fileID: 0}
+  waveSpeedText: {fileID: 0}
+  waveIndexText: {fileID: 0}
+  wavestartedtext: {fileID: 0}
+  enemalivetext: {fileID: 0}
