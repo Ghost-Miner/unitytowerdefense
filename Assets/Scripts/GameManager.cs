@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
+
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject levelWonPanel;
 
     public Animator shopPanelAnimator;
 
@@ -54,6 +58,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+    // Pause game 
+    #region pause game
     public void Pause ()
     {
         isPaused = true;
@@ -77,10 +84,13 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 1f;
     }
+    #endregion
 
     void EndGame()
     {
         gameEnded = true;
-        Debug.Log("game ended");
+
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
     }
 }
