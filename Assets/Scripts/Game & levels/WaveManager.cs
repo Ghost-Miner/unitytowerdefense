@@ -17,7 +17,7 @@ public class WaveManager : MonoBehaviour
     public GameObject startButton;
     public GameObject speedButton;
 
-    private float spawnTimer = 0f;
+    //private float spawnTimer = 0f;
     private int   waveIndex = 0;
     private bool  waveStarted = false;
     private float gameSpeed = 1f;
@@ -79,7 +79,7 @@ public class WaveManager : MonoBehaviour
     
     void StartWave()
     {
-        spawnTimer = 0;
+        //spawnTimer = 0;
 
         waveStarted = true;
 
@@ -128,8 +128,11 @@ public class WaveManager : MonoBehaviour
         //Debug.Log("Unit method called");
     }
 
-    IEnumerator WaveSpawn ()
+    IEnumerator WaveSpawn()
     {
+        float typesDelay = 3f;
+        float wavesDelay = 5f;
+
         WaveBlueprint wave = waves[waveIndex];
 
         if (wave.u2_prefab == null)
@@ -143,21 +146,21 @@ public class WaveManager : MonoBehaviour
             wave.u3_Count = 0;
         }
         enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
-        
+
         for (int i = 0; i < wave.u1_Count; i++)
         {
             Instantiate(wave.u1_prefab, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(1f / wave.u1_rate);
         }
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(typesDelay);
 
         for (int i = 0; i < wave.u2_Count; i++)
         {
             Instantiate(wave.u2_prefab, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(1f / wave.u2_rate);
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(typesDelay);
 
         if (wave.u3_prefab != null)
         {
@@ -176,6 +179,14 @@ public class WaveManager : MonoBehaviour
         if (waveIndex == waves.Length)
         {
             EndGame();
+        }
+
+        if (waveAutoStart)
+        {
+            yield return new WaitForSeconds(wavesDelay);
+
+            Debug.Log("WAVE AUTOSTART. " + waveIndex);
+            StartWave();
         }
     }
 }

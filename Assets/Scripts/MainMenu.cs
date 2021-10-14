@@ -1,17 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
     #region VARIABLES & REFERENCES
-    // Animations
     public Animator anim;
     private string currentState;
 
+    [SerializeField] private TMP_Text versionText;
+
     public SceneTransition sceneTransition;
     #endregion
+
+    private void Start()
+    {
+        versionText.text = GameManager.versionName;
+
+        SoundManager.PlaySound(SoundManager.Sound.m_Breaktime);
+    }
 
     public void LoadScene (string sceneName)
     {
@@ -32,8 +39,6 @@ public class MainMenu : MonoBehaviour
     {
         ChangeAnimationState(animName);
         anim.speed = 1.5f;
-
-        Debug.Log("mouse engtered"+ animName);
     }
 
     //Change animation

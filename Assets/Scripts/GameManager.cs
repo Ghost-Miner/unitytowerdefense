@@ -4,7 +4,7 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    private string versionName = "some verision";
+    public static string versionName = "Alpha 1";
 
     private bool gameEnded = false;
     private bool isPaused = false;

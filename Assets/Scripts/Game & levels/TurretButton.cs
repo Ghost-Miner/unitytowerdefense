@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TurretButton : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class TurretButton : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex < 4 )
+        {
+            return;
+        }
+
         bool afford = shop.CanAfford(towerName);
         
         if (afford)
