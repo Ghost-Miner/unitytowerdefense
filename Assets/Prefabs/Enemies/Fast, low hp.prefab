@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7476571010097048268}
   - component: {fileID: -6749180485707565360}
   m_Layer: 0
-  m_Name: Enemy fast
+  m_Name: Fast, low hp
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  health: 50
+  health: 25
 --- !u!195 &-7476571010097048268
 NavMeshAgent:
   m_ObjectHideFlags: 0

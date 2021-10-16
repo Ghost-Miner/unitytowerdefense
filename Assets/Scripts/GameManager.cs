@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine.UI;
+using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static string versionName = "Alpha 1";
 
     private bool gameEnded = false;
-    private bool isPaused = false;
+    private bool isPaused  = false;
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
@@ -15,12 +15,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject levelWonPanel;
 
-    public Animator shopPanelAnimator;
-
     [SerializeField] private GameObject hideEdgesCanvas;
 
     [SerializeField] private TMP_Text fpsDisplay;
     [SerializeField] private TMP_Text versionText;
+
+    [SerializeField] private Toggle autoStartToggle;
 
     private void Start()
     {
@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AuttoStartButton ()
+    {
+        WaveManager.waveAutoStart = !WaveManager.waveAutoStart;
+        Debug.Log("Autpstart: " + WaveManager.waveAutoStart);
+    }
 
     // Pause game 
     #region pause game
@@ -66,9 +71,7 @@ public class GameManager : MonoBehaviour
         isPaused = true;
 
         pausePanel.SetActive(true);
-        HudPanel.SetActive(false);
-
-        shopPanelAnimator.SetTrigger("hide");
+        //HudPanel.SetActive(false);
 
         Time.timeScale = 0f;
     }
@@ -78,9 +81,7 @@ public class GameManager : MonoBehaviour
         isPaused = false;
 
         pausePanel.SetActive(false);
-        HudPanel.SetActive(true);
-
-        shopPanelAnimator.SetTrigger("show");
+        //HudPanel.SetActive(true);
 
         Time.timeScale = 1f;
     }

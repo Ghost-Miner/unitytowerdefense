@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
 
     [Header("References and variables")]
     public static int  enemiesAlive = 0;
-    public        bool waveAutoStart;
+    public static bool waveAutoStart;
 
     public TMP_Text   waveNumberText;
     public GameObject startButton;
@@ -24,6 +24,8 @@ public class WaveManager : MonoBehaviour
 
     private GameObject unitPlaceholder;
     [SerializeField] private Transform  spawnPoint;
+
+    [SerializeField] private GameObject levelWonPanel;
 
     [Header("Wave control button")]
     [SerializeField] private Button     waveStartButton;
@@ -112,10 +114,13 @@ public class WaveManager : MonoBehaviour
 
     void EndGame()
     {
+        StopCoroutine(WaveSpawn());
         Debug.Log("Game won");
 
+        levelWonPanel.SetActive(true);
+
         waveStartButton.interactable = false;
-        startButton.SetActive(true);
+        startButton.SetActive(false);
         speedButton.SetActive(false);
 
         this.enabled = false;

@@ -2449,6 +2449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -6096,6 +6101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -8321,6 +8331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -12621,6 +12636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -14704,6 +14724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -14859,6 +14884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -26651,6 +26681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -33317,6 +33352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -36373,7 +36413,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: dc5ae70ce10bb7d40bd1f3cd27259a75,
+      objectReference: {fileID: 23800000, guid: b27313894728fc14aafa69d80ac002ae,
         type: 2}
     - target: {fileID: 6977380701931727331, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
         type: 3}
@@ -36602,7 +36642,7 @@ PrefabInstance:
     - target: {fileID: 8627037644239523263, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290d07f63e5cf824eac0413868bbf3c5, type: 3}
