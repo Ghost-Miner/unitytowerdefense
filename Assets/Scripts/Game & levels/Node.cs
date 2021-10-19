@@ -8,16 +8,16 @@ public class Node : MonoBehaviour
 
     //public PlayerNavmesh playerNavmesh;
 
-    public Color hooverColor;
-    public Color notEnoughMoneyColour;
+    public Color   hooverColor;
+    public Color   notEnoughMoneyColour;
     public Vector3 positionOffset;
 
-    [HideInInspector] public GameObject turret;
+    [HideInInspector] public GameObject      turret;
     [HideInInspector] public TurretBlueprint turretBlueprint;
-    [HideInInspector] public bool isUpgraded;
+    [HideInInspector] public bool            isUpgraded;
 
     private Renderer rend;
-    private Color startColor;
+    private Color    startColor;
 
     private BuildManager BuildManager;
 
@@ -69,8 +69,8 @@ public class Node : MonoBehaviour
 
         Destroy(turret);
 
-        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradePrefab, GetBuildPosition(), Quaternion.identity);
-        turret = _turret;
+        //GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradePrefab, GetBuildPosition(), Quaternion.identity);
+        //turret = _turret;
 
         //GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         //Destroy(effect, 5f);

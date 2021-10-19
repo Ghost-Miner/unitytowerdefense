@@ -11,7 +11,7 @@ public class TurretButton : MonoBehaviour
     public Shop shop;
 
     [SerializeField] private string towerName;
-    private Button button;
+                     private Button button;
 
     private bool infoPanelVisible;
 

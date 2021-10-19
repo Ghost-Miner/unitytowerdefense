@@ -208,12 +208,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9155720317110611829}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &25283842 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155720317135856247, guid: cddcc292709d9cb4889c794dcf09bcfb,
-    type: 3}
-  m_PrefabInstance: {fileID: 9155720317110611829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &35353184
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,18 +274,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &43509796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9155720317151446865, guid: cddcc292709d9cb4889c794dcf09bcfb,
-    type: 3}
-  m_PrefabInstance: {fileID: 9155720317110611829}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &43509802 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9155720317151446879, guid: cddcc292709d9cb4889c794dcf09bcfb,
-    type: 3}
-  m_PrefabInstance: {fileID: 9155720317110611829}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &44632266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2002,7 +1984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26ba57e839ab9446b84f0f1875dd6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildEffect: {fileID: 1774482371}
   standardTurretPrefab: {fileID: 2526219802378843687, guid: d95c9abb008f6d44a992df105ca49db0,
     type: 3}
   whiteTurretPrefab: {fileID: 4863411048247325529, guid: a1d689ff2eca9ea49864f4aae1f23ab2,
@@ -2035,12 +2016,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pausePanel: {fileID: 1839660859}
-  shopPaael: {fileID: 43509796}
-  pauseButton: {fileID: 25283842}
-  shopPanelAnimator: {fileID: 43509802}
+  HudPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  levelWonPanel: {fileID: 0}
   hideEdgesCanvas: {fileID: 799696140}
+  moneyText: {fileID: 0}
   fpsDisplay: {fileID: 649615153}
   versionText: {fileID: 1022189215}
+  autoStartToggle: {fileID: 0}
 --- !u!1001 &445745710
 PrefabInstance:
   m_ObjectHideFlags: 0
