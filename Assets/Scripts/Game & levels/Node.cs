@@ -6,7 +6,7 @@ public class Node : MonoBehaviour
 {
     public NavMeshSurface surface;
 
-    public PlayerNavmesh playerNavmesh;
+    //public PlayerNavmesh playerNavmesh;
 
     public Color hooverColor;
     public Color notEnoughMoneyColour;
@@ -50,8 +50,8 @@ public class Node : MonoBehaviour
         turret = _turret;
         turretBlueprint = blueprint;
 
-        GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
+        //GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        //Destroy(effect, 5f);
 
         Invoke("UpdateMesh", meshUpdateDelay);
 
@@ -72,8 +72,8 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradePrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
-        GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
+        //GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
+        //Destroy(effect, 5f);
 
         isUpgraded = true;
 

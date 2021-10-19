@@ -136,7 +136,7 @@ public class WaveManager : MonoBehaviour
     IEnumerator WaveSpawn()
     {
         float typesDelay = 3f;
-        float wavesDelay = 5f;
+        float wavesDelay = 3f;
 
         WaveBlueprint wave = waves[waveIndex];
 

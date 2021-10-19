@@ -1,9 +1,11 @@
-﻿using UnityEngine.UI;
+﻿using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    #region References and variables
     public static string versionName = "Alpha 1";
 
     private bool gameEnded = false;
@@ -17,10 +19,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject hideEdgesCanvas;
 
+    [SerializeField] private TMP_Text moneyText;
+
     [SerializeField] private TMP_Text fpsDisplay;
     [SerializeField] private TMP_Text versionText;
 
     [SerializeField] private Toggle autoStartToggle;
+    #endregion
 
     private void Start()
     {
@@ -33,6 +38,8 @@ public class GameManager : MonoBehaviour
         // Display FPS
         int fps = (int)(1f / Time.unscaledDeltaTime);
         fpsDisplay.text = "FPS: " + fps;
+
+        moneyText.text = "Money: " + PlayerStats.money;
 
         if (gameEnded)
         {
@@ -58,6 +65,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LoadScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+    public void RestartScene ()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void HidePanel (GameObject panel)
+    {
+        panel.SetActive(false);
+    }
+    public void ConfirmPanel (GameObject panel)
+    {
+        panel.SetActive(true);
+    }
+
     public void AuttoStartButton ()
     {
         WaveManager.waveAutoStart = !WaveManager.waveAutoStart;
@@ -71,7 +96,6 @@ public class GameManager : MonoBehaviour
         isPaused = true;
 
         pausePanel.SetActive(true);
-        //HudPanel.SetActive(false);
 
         Time.timeScale = 0f;
     }
@@ -81,7 +105,6 @@ public class GameManager : MonoBehaviour
         isPaused = false;
 
         pausePanel.SetActive(false);
-        //HudPanel.SetActive(true);
 
         Time.timeScale = 1f;
     }
