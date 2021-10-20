@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 76358810549120895}
   - component: {fileID: 9022727446670234085}
   m_Layer: 0
-  m_Name: turret_3
+  m_Name: Flame 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,12 +73,10 @@ MonoBehaviour:
   range: 6
   turnSpeed: 10
   enemyTag: Enemy
-  partToRotate: {fileID: 2526219803138063596, guid: 44ec78f8a17355848a66b043c0671d30,
-    type: 3}
+  partToRotate: {fileID: 76358810558955677}
   bulletPrefab: {fileID: 618347140487648096, guid: b064f5d035fbd5348b2113cb2a92ec31,
     type: 3}
-  firePoint: {fileID: 2526219803169860612, guid: 44ec78f8a17355848a66b043c0671d30,
-    type: 3}
+  firePoint: {fileID: 1860924630503322192}
 --- !u!1 &76358810558602427
 GameObject:
   m_ObjectHideFlags: 0

@@ -1087,21 +1087,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicTurretBP:
     prefab: {fileID: 0}
+    upgradePrefab: {fileID: 0}
     sellPrice: 0
     buyPrice: 0
     upgradePrice: 0
   LaserTurretBP:
     prefab: {fileID: 0}
+    upgradePrefab: {fileID: 0}
     sellPrice: 0
     buyPrice: 0
     upgradePrice: 0
   MachineTurret:
     prefab: {fileID: 0}
+    upgradePrefab: {fileID: 0}
     sellPrice: 0
     buyPrice: 0
     upgradePrice: 0
   FlameTurretBP:
     prefab: {fileID: 0}
+    upgradePrefab: {fileID: 0}
+    sellPrice: 0
+    buyPrice: 0
+    upgradePrice: 0
+  wallBP:
+    prefab: {fileID: 0}
+    upgradePrefab: {fileID: 0}
     sellPrice: 0
     buyPrice: 0
     upgradePrice: 0
@@ -16893,6 +16903,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -42.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653352031796553409, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348693554557315645, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}

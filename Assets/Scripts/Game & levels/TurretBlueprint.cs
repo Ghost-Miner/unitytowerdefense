@@ -6,7 +6,7 @@ using UnityEngine;
 public class TurretBlueprint
 {
     public GameObject prefab;
-    //public GameObject upgradePrefab;
+    public GameObject upgradePrefab;
 
     public int sellPrice;
     public int buyPrice;

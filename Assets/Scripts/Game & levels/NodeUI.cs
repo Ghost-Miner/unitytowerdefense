@@ -9,13 +9,13 @@ public class NodeUI : MonoBehaviour
 
     public TMP_Text upgradeCostText;
     public TMP_Text sellCost;
-    public Button upgradeButton;
+    public Button   upgradeButton;
 
     private Node target;        // Select / build turret
 
-    private float cameraZUp = -12f;        // Position when turret menu goes outside the vidible area
+    private float cameraZUp      = -12f;        // Position when turret menu goes outside the vidible area
     private float cameraZDefault = -19f;   // Default Z position
-    private float camMoveSpeed = 5f;
+    private float camMoveSpeed   = 5f;
 
     [SerializeField] private CameraController cameraController;
 

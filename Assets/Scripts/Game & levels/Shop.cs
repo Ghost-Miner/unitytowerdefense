@@ -9,11 +9,13 @@ public class Shop : MonoBehaviour
     public TurretBlueprint LaserTurretBP;
     public TurretBlueprint MachineTurret;
     public TurretBlueprint FlameTurretBP;
+    public TurretBlueprint wallBP;
 
     [SerializeField] private TMP_Text basicPrice;
     [SerializeField] private TMP_Text laserPrice;
     [SerializeField] private TMP_Text machinePrice;
     [SerializeField] private TMP_Text flaePrice;
+    [SerializeField] private TMP_Text wallProce;
 
     private void Start()
     {
@@ -23,6 +25,7 @@ public class Shop : MonoBehaviour
         laserPrice.text     = "Cost: " + LaserTurretBP.buyPrice;
         machinePrice.text   = "Cost: " + MachineTurret.buyPrice;
         flaePrice.text      = "Cost: " + FlameTurretBP.buyPrice;
+        wallProce.text      = "Cost: " + wallBP.buyPrice;
     }
 
     public void SelectStandardTurret ()
@@ -41,6 +44,10 @@ public class Shop : MonoBehaviour
     {
         switch (name)
         {
+            default:
+                Debug.LogError("Select turret: turretName was no defined");
+            break;
+
             case "basic":
                 buildManager.SelectTurretToBuild(BasicTurretBP);
                 break;
@@ -55,6 +62,11 @@ public class Shop : MonoBehaviour
 
             case "flame":
                 buildManager.SelectTurretToBuild(FlameTurretBP);
+                break;
+
+
+            case "wall":
+                buildManager.SelectTurretToBuild(wallBP);
                 break;
         }
     }
@@ -94,6 +106,15 @@ public class Shop : MonoBehaviour
 
             case "machine":
                 if (PlayerStats.money >= MachineTurret.buyPrice)
+                    return true;
+
+                else
+                    return false;
+            //break;
+
+
+            case "wall":
+                if (PlayerStats.money >= wallBP.buyPrice)
                     return true;
 
                 else
