@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class NodeUI : MonoBehaviour
 {
     public GameObject ui;       // Canvas object
+    public GameObject outline;
     public GameObject camera;   // Main camera
 
     public TMP_Text upgradeCostText;
@@ -46,6 +47,7 @@ public class NodeUI : MonoBehaviour
             upgradeButton.interactable = true;
         }
 
+        outline.SetActive(true);
         ui.SetActive(true);
 
         sellCost.text = _target.turretBlueprint.sellPrice.ToString(); 
@@ -56,6 +58,7 @@ public class NodeUI : MonoBehaviour
     {
         MoveCameraDown();
         ui.SetActive(false);
+        outline.SetActive(false);
     }
 
     public void EnableUi()
@@ -72,10 +75,10 @@ public class NodeUI : MonoBehaviour
         }
 
         // Move camera up if the turret menu goes outside the screen
-        if (ui.transform.position.z >= -6 && ui.activeInHierarchy)
+        /*if (ui.transform.position.z >= -6 && ui.activeInHierarchy)
         {
             MoveCameraUp();
-        }
+        } */
     }
 
     public void Upgrade ()

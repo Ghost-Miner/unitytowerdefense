@@ -13563,6 +13563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 2044594860}
+  outline: {fileID: 0}
   camera: {fileID: 963194225}
   upgradeCostText: {fileID: 1528307993}
   sellCost: {fileID: 1097142601}
@@ -17816,6 +17817,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2348693556206030677, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348693556206030677, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -17837,6 +17843,11 @@ PrefabInstance:
     - target: {fileID: 2348693556266557958, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2348693556266557958, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2348693556266557958, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
