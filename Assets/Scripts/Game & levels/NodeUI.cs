@@ -58,6 +58,11 @@ public class NodeUI : MonoBehaviour
         ui.SetActive(false);
     }
 
+    public void EnableUi()
+    {
+        ui.SetActive(true);
+    }
+
     private void Update()
     {
         // RMB to disable turret menu

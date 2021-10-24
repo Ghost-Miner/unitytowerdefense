@@ -10,7 +10,7 @@ public class DebugOverlayControl : MonoBehaviour
     [SerializeField] private GameObject devInfo;
 
     private bool generalInfoShown = false;
-    private bool devInfoShown = false;
+    private bool devInfoShown     = false;
 
     void Update()
     {

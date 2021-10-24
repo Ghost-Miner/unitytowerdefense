@@ -23,13 +23,16 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text fpsDisplay;
     [SerializeField] private TMP_Text versionText;
+    [SerializeField] private TMP_Text sceneNameText;
 
     [SerializeField] private Toggle autoStartToggle;
     #endregion
 
     private void Start()
     {
-        versionText.text = versionName;
+        versionText.text   = versionName;
+        sceneNameText.text = "Scene: " + SceneManager.GetActiveScene().name;
+
         hideEdgesCanvas.SetActive(true);
     }
 
