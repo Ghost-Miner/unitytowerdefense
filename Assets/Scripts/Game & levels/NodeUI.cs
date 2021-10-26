@@ -18,6 +18,8 @@ public class NodeUI : MonoBehaviour
     private float cameraZDefault = -19f;   // Default Z position
     private float camMoveSpeed   = 5f;
 
+    private string noMoneyText = "Coming soon";
+
     [SerializeField] private CameraController cameraController;
 
 
@@ -38,7 +40,7 @@ public class NodeUI : MonoBehaviour
         else if (PlayerStats.money < _target.turretBlueprint.upgradePrice)
         {
             upgradeButton.interactable = false;
-            upgradeCostText.text = "Not enough money";
+            upgradeCostText.text = noMoneyText;
         }
         // Everything ok? display upgrade cost
         else
