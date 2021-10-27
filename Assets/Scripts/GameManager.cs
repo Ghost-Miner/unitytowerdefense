@@ -1,4 +1,5 @@
 ﻿using UnityEngine.SceneManagement;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
@@ -11,14 +12,15 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
     private bool isPaused  = false;
 
+    private float hideArrowTime = 2f;
+
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
-
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject levelWonPanel;
 
+    [SerializeField] private GameObject trackArrow;
     [SerializeField] private GameObject hideEdgesCanvas;
-
     [SerializeField] private TMP_Text moneyText;
 
     [SerializeField] private TMP_Text fpsDisplay;
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         sceneNameText.text = "Scene: " + SceneManager.GetActiveScene().name;
 
         hideEdgesCanvas.SetActive(true);
+        StartCoroutine(HideTrackArrow());
     }
 
     void Update()
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour
     public void AuttoStartButton ()
     {
         WaveManager.waveAutoStart = !WaveManager.waveAutoStart;
-        Debug.Log("Autpstart: " + WaveManager.waveAutoStart);
+        Debug.Log("Autostart: " + WaveManager.waveAutoStart);
     }
 
     // Pause game 
@@ -119,5 +122,14 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
+    }
+
+    private IEnumerator HideTrackArrow()
+    {
+        trackArrow.SetActive(true);
+
+        yield return new WaitForSeconds(hideArrowTime);
+
+        trackArrow.SetActive(false);
     }
 }

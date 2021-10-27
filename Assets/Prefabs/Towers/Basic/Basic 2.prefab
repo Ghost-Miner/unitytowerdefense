@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 2526219802386122221}
   - component: {fileID: 2526219803189612933}
   m_Layer: 0
-  m_Name: Blue turret 1
+  m_Name: Basic 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 0}
   fireRate: 2
-  range: 7
+  range: 10
   turnSpeed: 10
   enemyTag: Enemy
   partToRotate: {fileID: 2526219803138063596}

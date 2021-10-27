@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 0}
   fireRate: 1
-  range: 10
+  range: 8
   turnSpeed: 10
   enemyTag: Enemy
   partToRotate: {fileID: 2526219803138063596}

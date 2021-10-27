@@ -2292,6 +2292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -3375,6 +3380,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -3984,7 +3994,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &256968663
 Transform:
   m_ObjectHideFlags: 0
@@ -3993,8 +4003,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256968662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.5, y: 0, z: -8.5}
-  m_LocalScale: {x: 4.000065, y: 1, z: 8}
+  m_LocalPosition: {x: 40.5, y: 1, z: -12.5}
+  m_LocalScale: {x: 4.000086, y: 0.9999999, z: 7.999999}
   m_Children: []
   m_Father: {fileID: 839201098}
   m_RootOrder: 4
@@ -5993,6 +6003,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -9582,6 +9597,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -10999,6 +11019,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -12914,6 +12939,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -14620,7 +14650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1204232154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: -0.05, z: -25.464}
+  m_LocalPosition: {x: 1.5, y: 0, z: -25.464}
   m_LocalScale: {x: 2.0000048, y: 0.99999905, z: 17.676493}
   m_Children: []
   m_Father: {fileID: 839201098}
@@ -14954,7 +14984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1231927101
 Transform:
   m_ObjectHideFlags: 0
@@ -14963,8 +14993,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231927100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.5, y: 0, z: -26.5}
-  m_LocalScale: {x: -11.999946, y: 1, z: 4}
+  m_LocalPosition: {x: 16.5, y: 1, z: -24.5}
+  m_LocalScale: {x: -3.9999523, y: 0.9999997, z: 16.000002}
   m_Children: []
   m_Father: {fileID: 839201098}
   m_RootOrder: 6
@@ -15160,7 +15190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1244824914
 Transform:
   m_ObjectHideFlags: 0
@@ -15169,8 +15199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244824913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.5, y: 0, z: -6.5}
-  m_LocalScale: {x: 12.000087, y: 1, z: 4}
+  m_LocalPosition: {x: 44.5, y: 1, z: -6.5}
+  m_LocalScale: {x: 12.0001135, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 839201098}
   m_RootOrder: 5
@@ -16958,6 +16988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -19163,6 +19198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -19507,7 +19547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
   m_StaticEditorFlags: 8
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1603856351
 Transform:
   m_ObjectHideFlags: 0
@@ -19516,8 +19556,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603856350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.5, y: 0, z: -10.5}
-  m_LocalScale: {x: 12.000052, y: 1, z: 4}
+  m_LocalPosition: {x: 22.5, y: 1, z: -4.5}
+  m_LocalScale: {x: 8.000065, y: 0.99999976, z: 7.9999995}
   m_Children: []
   m_Father: {fileID: 839201098}
   m_RootOrder: 3
@@ -19668,6 +19708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -20495,6 +20540,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -20581,6 +20631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Node (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
@@ -33028,6 +33083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -34622,6 +34682,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044979, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
       objectReference: {fileID: 0}
@@ -35851,7 +35916,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: f85f4ecce680fa245b9b9a46f6961ac9,
+      objectReference: {fileID: 23800000, guid: 33f9ca459b14fa849b2247c738df2732,
         type: 2}
     - target: {fileID: 6977380701931727331, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
         type: 3}

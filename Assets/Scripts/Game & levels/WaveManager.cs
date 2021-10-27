@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using TMPro;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
+using System.Collections;
 
 public class WaveManager : MonoBehaviour
 {
@@ -17,15 +16,16 @@ public class WaveManager : MonoBehaviour
     public GameObject startButton;
     public GameObject speedButton;
 
-    //private float spawnTimer = 0f;
+    [SerializeField]
     private int   waveIndex = 0;
     private bool  waveStarted = false;
     private float gameSpeed = 1f;
 
     private GameObject unitPlaceholder;
     [SerializeField] private Transform  spawnPoint;
-
     [SerializeField] private GameObject levelWonPanel;
+
+    [SerializeField] private ErrorReportWindow errorReportWindow;
 
     [Header("Wave control button")]
     [SerializeField] private Button     waveStartButton;
@@ -53,6 +53,11 @@ public class WaveManager : MonoBehaviour
         {
             DisableButton();
             return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            waveIndex = 2;
         }
 
         //EnableButton();
@@ -137,6 +142,7 @@ public class WaveManager : MonoBehaviour
     {
         float typesDelay = 3f;
         float wavesDelay = 3f;
+        string incorretRateErrMsg = "spawnRate is set to 0. Must be 1 or higher!";
 
         WaveBlueprint wave = waves[waveIndex];
 
@@ -152,6 +158,12 @@ public class WaveManager : MonoBehaviour
         }
         enemiesAlive = wave.u1_Count + wave.u2_Count + wave.u3_Count; // Set total number of enemies to spawn
 
+        if (wave.u1_rate <= 0 && wave.u1_prefab != null)
+        {
+            Debug.LogError("Unit 1 " + incorretRateErrMsg);
+
+            errorReportWindow.SetMessage("Unit 1 " + incorretRateErrMsg, waveIndex);
+        }
         for (int i = 0; i < wave.u1_Count; i++)
         {
             Instantiate(wave.u1_prefab, spawnPoint.position, spawnPoint.rotation);
@@ -160,13 +172,26 @@ public class WaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(typesDelay);
 
+        if (wave.u2_rate <= 0 && wave.u2_prefab != null)
+        {
+            Debug.LogError("Unit 2 " + incorretRateErrMsg);
+
+            errorReportWindow.SetMessage("Unit 2 " + incorretRateErrMsg, waveIndex);
+        }
         for (int i = 0; i < wave.u2_Count; i++)
         {
             Instantiate(wave.u2_prefab, spawnPoint.position, spawnPoint.rotation);
             yield return new WaitForSeconds(1f / wave.u2_rate);
         }
+
         yield return new WaitForSeconds(typesDelay);
 
+        if (wave.u3_rate <= 0 && wave.u3_prefab != null)
+        {
+            Debug.LogError("Unit 3  " + incorretRateErrMsg);
+
+            errorReportWindow.SetMessage("Unit 1 " + incorretRateErrMsg, waveIndex);
+        }
         if (wave.u3_prefab != null)
         {
             for (int i = 0; i < wave.u3_Count; i++)
