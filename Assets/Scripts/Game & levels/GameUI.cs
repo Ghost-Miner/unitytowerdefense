@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
+    [SerializeField] private GameObject autoStartDesc;
     private void OnDisable()
     {
         Time.timeScale = 1f;
@@ -23,5 +24,15 @@ public class GameUI : MonoBehaviour
     public void NextScene ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void AutoStartDescShow ()
+    {
+        autoStartDesc.SetActive(true);
+    }
+
+    public void AutoStartDescHide()
+    {
+        autoStartDesc.SetActive(false);
     }
 }

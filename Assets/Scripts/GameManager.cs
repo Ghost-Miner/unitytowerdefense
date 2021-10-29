@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
     private bool isPaused  = false;
 
-    private float hideArrowTime = 2f;
+    private float hideArrowTime = 3f;
 
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
