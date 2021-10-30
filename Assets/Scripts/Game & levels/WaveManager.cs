@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class WaveManager : MonoBehaviour
     public static bool waveAutoStart;
 
     public TMP_Text   waveNumberText;
-    public GameObject startButton;
-    public GameObject speedButton;
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject speedButton;
 
     [SerializeField]
     private int   waveIndex = 0;
@@ -86,14 +87,18 @@ public class WaveManager : MonoBehaviour
     
     void StartWave()
     {
-        //spawnTimer = 0;
-
+        var thisScene = SceneManager.GetActiveScene().name;
         waveStarted = true;
 
         startButton.SetActive(false);
         speedButton.SetActive(true);
 
         waveSpeedText.text = "Speed: " + gameSpeed.ToString("0") + "x";
+
+        if (thisScene == "Tutorial 1")
+        {
+            Tutorial1windows.waveStart = true;
+        }
 
         StartCoroutine(WaveSpawn());
     }
@@ -131,15 +136,9 @@ public class WaveManager : MonoBehaviour
         this.enabled = false;
     }
 
-    void SpawnEnemy(GameObject unit)
-    {
-        Instantiate(unit, spawnPoint.position, spawnPoint.rotation);
-
-        //Debug.Log("Unit method called");
-    }
-
     IEnumerator WaveSpawn()
     {
+
         float typesDelay = 3f;
         float wavesDelay = 3f;
         string incorretRateErrMsg = "spawnRate is set to 0. Must be 1 or higher!";

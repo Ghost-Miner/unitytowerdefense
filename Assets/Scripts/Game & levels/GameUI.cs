@@ -9,7 +9,6 @@ public class GameUI : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1f;
-        Debug.Log(gameObject.name + "| TimeScale: " + Time.timeScale);
     }
     public void RestartScene ()
     {

@@ -34,7 +34,6 @@ public class ErrorReportWindow : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1f;
-        Debug.Log(gameObject.name + "Time scale: " + Time.timeScale);
     }
 
     public void Continue ()

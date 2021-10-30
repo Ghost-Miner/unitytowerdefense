@@ -7931,6 +7931,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f200f65ed750eff4c99fbb47e1398fc5, type: 3}
+--- !u!114 &447730107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6707122344872326644, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467487527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &455776760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13207,6 +13219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 779915481}
+  startWaveButton: {fileID: 1178820901}
+  waveSpeedButton: {fileID: 447730107}
   tutMessage:
   - {fileID: 1066568836}
   - {fileID: 1970957816}
@@ -17072,6 +17086,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b0cb7c5b0ac8d140a03978ea0f9d142, type: 3}
+--- !u!114 &1178820901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3624871322695864331, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467487527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1179034165
 PrefabInstance:
   m_ObjectHideFlags: 0
