@@ -29,7 +29,7 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         BuildManager = BuildManager.instance;
-    }
+    }    
 
     public Vector3 GetBuildPosition ()
     {
@@ -52,10 +52,10 @@ public class Node : MonoBehaviour
 
         //GameObject effect = (GameObject)Instantiate(BuildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
         //Destroy(effect, 5f);
-
+        
         Invoke("UpdateMesh", meshUpdateDelay);
 
-        //Debug.Log("### turret built, money: " + PlayerStats.money);
+        Debug.Log("### turret built, money: " + PlayerStats.money);
     }
 
     public void UpgradeTurret ()
@@ -95,6 +95,8 @@ public class Node : MonoBehaviour
     void UpdateMesh ()
     {
         surface.BuildNavMesh();
+
+        Debug.Log("Mesh updated");
     }
 
     private void OnMouseDown()

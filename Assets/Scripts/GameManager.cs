@@ -1,28 +1,36 @@
 ﻿using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.AI;
 using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     #region References and variables
+    [HideInInspector]
     public static string versionName = "Alpha 1";
 
     private bool gameEnded = false;
     private bool isPaused  = false;
-
     private float hideArrowTime = 3f;
 
+    public float meshUpdateTime = 2f;
+
+    [SerializeField] private NavMeshSurface surface;
+
+    [Header ("Game UI")]
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject levelWonPanel;
+    [SerializeField] private TMP_Text   moneyText;
 
+    [Header ("world canvse")]
     [SerializeField] private GameObject trackArrow;
     [SerializeField] private GameObject hideEdgesCanvas;
-    [SerializeField] private TMP_Text moneyText;
 
+    [Header ("Debug info")]
     [SerializeField] private TMP_Text fpsDisplay;
     [SerializeField] private TMP_Text versionText;
     [SerializeField] private TMP_Text sceneNameText;
@@ -37,6 +45,15 @@ public class GameManager : MonoBehaviour
 
         hideEdgesCanvas.SetActive(true);
         StartCoroutine(HideTrackArrow());
+
+        //InvokeRepeating("UpdateMesh", 5f, meshUpdateTime);
+    }
+
+    void UpdateMesh()
+    {
+        surface.BuildNavMesh();
+
+        Debug.Log("Mesh updated");
     }
 
     void Update()

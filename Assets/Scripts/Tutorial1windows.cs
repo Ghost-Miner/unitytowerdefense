@@ -82,6 +82,21 @@ public class Tutorial1windows : MonoBehaviour
 
         Time.timeScale = 1f;
     }
+
+    public void SkipTutorial ()
+    {
+        for (int i = 0; i < tutMessage.Length; i++)
+        {
+            tutMessage[i].SetActive(false);
+        }
+
+        background.SetActive(false);
+
+        startWaveButton.interactable = true;
+        waveSpeedButton.interactable = true;
+
+        Time.timeScale = 1f;
+    }
     #endregion
 
     #region Enemy types
@@ -110,7 +125,8 @@ public class Tutorial1windows : MonoBehaviour
             return;
         }
 
-        background.SetActive(false);
+        background.SetActive(true);
+
         Time.timeScale = 0f;
         
         for (int i = 0; i < enemyTypeMessage.Length; i++)
