@@ -44519,10 +44519,25 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
         type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
+        type: 3}
+      propertyPath: m_AgentTypeID
+      value: 1479372276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
+        type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 23800000, guid: aa7252619c11f2b4db0ccbb18bc78b26,
+      objectReference: {fileID: 23800000, guid: e65edb10d62a82540a29f280d8d5014e,
         type: 2}
+    - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
+        type: 3}
+      propertyPath: m_OverrideVoxelSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6977380701931727331, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
         type: 3}
       propertyPath: m_RootOrder
@@ -44750,7 +44765,7 @@ PrefabInstance:
     - target: {fileID: 8627037644239523263, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290d07f63e5cf824eac0413868bbf3c5, type: 3}
