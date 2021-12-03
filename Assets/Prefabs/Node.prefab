@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 78094207be6b77743898497ee2535eeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   surface: {fileID: 0}
-  playerNavmesh: {fileID: 0}
   hooverColor: {r: 0.33962262, g: 0.33962262, b: 0.33962262, a: 1}
   notEnoughMoneyColour: {r: 1, g: 0.36320752, b: 0.36320752, a: 1}
   positionOffset: {x: 0, y: 0.5, z: 0}
@@ -115,7 +114,7 @@ MonoBehaviour:
   turretBlueprint:
     prefab: {fileID: 0}
     upgradePrefab: {fileID: 0}
-    sellCost: 0
-    cost: 0
-    upgradeCost: 0
+    sellPrice: 0
+    buyPrice: 0
+    upgradePrice: 0
   isUpgraded: 0
