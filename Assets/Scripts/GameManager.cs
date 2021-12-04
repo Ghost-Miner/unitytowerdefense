@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
 
         pausePanel.SetActive(true);
 
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; 
     }
 
     public void Resume ()

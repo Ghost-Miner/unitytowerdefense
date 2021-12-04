@@ -7,21 +7,26 @@ using System.IO;
 
 public class Settings : MonoBehaviour
 {
-    public AudioMixer   audioMixer;             //Audio mixer
+    [SerializeField] private AudioMixer   audioMixer;             //Audio mixer
 
-    public TMP_Dropdown qualityDropdown;        //Quality dropdown
+    [SerializeField] private TMP_Dropdown qualityDropdown;        //Quality dropdown
 
-    public Slider MusicVolumeSlider;      //Music Volume slider
-    public TMP_Text     MusicVolumeSliderText;  //Music Volume slider text displaying volume level - Located in Volume slider >> Handle slide area >> Handle
+    [SerializeField] private Slider   MusicVolumeSlider;      //Music Volume slider
+    [SerializeField] private Slider   SFXVolumeSlider;        //SFX Volume slider
 
-    public Slider       SFXVolumeSlider;        //SFX Volume slider
-    public TMP_Text     SFXVolumeSliderText;    //SFX Volume slider text displaying volume level - Located in Volume slider >> Handle slide area >> Handle
+    [SerializeField] private Toggle SFXToggle;
+    [SerializeField] private Toggle MusicToggle;
+
+    private bool playMusic;
+    private bool playSounds;
 
     // Variables used to save settings into a file
     private float   volMaster;     // Master Volume
     private float   volSFX;        // Sound effects Volume
     private float   volMusic;      // Music Volume
     private int     qualIndex;     // Quality index
+    private bool    playMus;
+    private bool    playSfx;
 
     private void OnDisable()
     {
@@ -38,7 +43,7 @@ public class Settings : MonoBehaviour
             SetVolumeSFX(1.0f);
             SetQuality(0);
 
-            SaveSettings();
+            //SaveSettings();
             LoadSettimgs();
         }
     }
@@ -47,20 +52,43 @@ public class Settings : MonoBehaviour
     {
         LoadSettimgs();
         Debug.Log("start");
-            }
-
-    void Update()
-    {
-        
     }
 
     // Change volume
     #region Volume settings
     // Sound effects 
+    public void ChangeVolumeSFX(bool SFXvolume)
+    {
+        //audioMixer.SetFloat("soundVol", Mathf.Log10(SFXvolume) * 20);
+        //SFXVolumeSliderText.text = (SFXvolume*100).ToString("0") + "%";
+
+        //volSFX = SFXvolume;
+
+        playSounds = SFXvolume;
+        playSfx = playSounds;
+
+        Debug.Log("OPTIONS SFX volume: " + SFXvolume);
+    }
+
+    // Music
+    public void ChangeVolumeMusic(bool Musicvolume)
+    {
+        //audioMixer.SetFloat("musicVol", Mathf.Log10(Musicvolume) * 20);
+        //MusicVolumeSliderText.text = (Musicvolume*100).ToString("0") + "%";
+
+        //volMusic = Musicvolume;
+
+        playMusic = Musicvolume;
+        playMus = playMusic;
+
+        Debug.Log("OPTIONS Music volume: " + Musicvolume);
+    }
+
+    // Sound effects 
     public void SetVolumeSFX(float SFXvolume)
     {
-        audioMixer.SetFloat("soundVol", Mathf.Log10(SFXvolume) * 20);
-        SFXVolumeSliderText.text = (SFXvolume*100).ToString("0") + "%";
+        //audioMixer.SetFloat("soundVol", Mathf.Log10(SFXvolume) * 20);
+        //SFXVolumeSliderText.text = (SFXvolume*100).ToString("0") + "%";
 
         volSFX = SFXvolume;
 
@@ -71,7 +99,7 @@ public class Settings : MonoBehaviour
     public void SetVolumeMusic(float Musicvolume)
     {
         audioMixer.SetFloat("musicVol", Mathf.Log10(Musicvolume) * 20);
-        MusicVolumeSliderText.text = (Musicvolume*100).ToString("0") + "%";
+        //MusicVolumeSliderText.text = (Musicvolume*100).ToString("0") + "%";
 
         volMusic = Musicvolume;
 
@@ -99,6 +127,8 @@ public class Settings : MonoBehaviour
             SFXvolume = volSFX,
             Musicvolume = volMusic,
             quality = qualIndex,
+            Sound = playSfx,
+            Music = playMus
         };
 
         string json = JsonUtility.ToJson(settingsData);
@@ -114,20 +144,26 @@ public class Settings : MonoBehaviour
         string json = File.ReadAllText(Application.dataPath + "/Game data" + "/Settings.json");
 
         SettingsData loadSettings = JsonUtility.FromJson<SettingsData>(json);
-        SetVolumeSFX(loadSettings.SFXvolume);
-        SetVolumeMusic(loadSettings.Musicvolume);
+        //SetVolumeSFX(loadSettings.SFXvolume);
+        //SetVolumeMusic(loadSettings.Musicvolume);
+
+        ChangeVolumeMusic(loadSettings.Music);
+        ChangeVolumeSFX(loadSettings.Sound);
 
         SFXVolumeSlider.value = loadSettings.SFXvolume;
-        SFXVolumeSliderText.text = (loadSettings.SFXvolume * 100).ToString("0") + "%";
+        //SFXVolumeSliderText.text = (loadSettings.SFXvolume * 100).ToString("0") + "%";
 
         MusicVolumeSlider.value = loadSettings.Musicvolume;
-        MusicVolumeSliderText.text = (loadSettings.Musicvolume * 100).ToString("0") + "%";
+        //'MusicVolumeSliderText.text = (loadSettings.Musicvolume * 100).ToString("0") + "%";
 
         SetQuality(loadSettings.quality);
         qualityDropdown.value = loadSettings.quality;
 
-        Debug.Log("LOAD SFX Volume: " + loadSettings.SFXvolume);
-        Debug.Log("LOAD Music Volume: " + loadSettings.Musicvolume);
+        SFXToggle.isOn = loadSettings.Sound;
+        MusicToggle.isOn = loadSettings.Music;
+
+        Debug.Log("LOAD SFX Volume: " + loadSettings.Sound);
+        Debug.Log("LOAD Music Volume: " + loadSettings.Music);
         Debug.Log("LOAD Quality: " + loadSettings.quality);
     }
 
@@ -136,6 +172,8 @@ public class Settings : MonoBehaviour
     {
         public float SFXvolume;
         public float Musicvolume;
+        public bool Sound;
+        public bool Music;
 
         public int quality;
     }
