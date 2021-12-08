@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject HudPanel;
     [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject levelWonPanel;
+    [SerializeField] private GameObject settingPanel;
     [SerializeField] private TMP_Text   moneyText;
 
     [Header ("world canvse")]
@@ -112,12 +112,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("Autostart: " + WaveManager.waveAutoStart);
     }
 
+    public void OpenSettings ()
+    {
+        settingPanel.SetActive(true);
+    }
+
     // Pause game 
     #region pause game
     public void Pause ()
     {
         isPaused = true;
-
+         
         pausePanel.SetActive(true);
 
         Time.timeScale = 0f; 

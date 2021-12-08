@@ -16,8 +16,6 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         versionText.text = GameManager.versionName;
-
-        SoundManager.PlaySound(SoundManager.Sound.m_Breaktime);
     }
 
     public void LoadScene (string sceneName)

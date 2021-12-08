@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject autoStartDesc;
+
     private void OnDisable()
     {
         Time.timeScale = 1f;

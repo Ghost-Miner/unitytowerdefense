@@ -8919,7 +8919,11 @@ MonoBehaviour:
   scrollSpeed: 5
   zoomMinY: 10
   zoomMaxY: 50
-  defaultCamPosition: {x: 0, y: 0, z: 0}
+  yPos169: 44
+  yPos1610: 45
+  yPos43: 57
+  yPos54: 55
+  yPos32: 50
 --- !u!1 &977640528
 GameObject:
   m_ObjectHideFlags: 0
@@ -29377,17 +29381,17 @@ PrefabInstance:
     - target: {fileID: 3933537295643813370, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.18823531
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 3933537295643813370, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.18039216
+      value: 0.14901961
       objectReference: {fileID: 0}
     - target: {fileID: 3933537295643813370, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.16862746
+      value: 0.14117648
       objectReference: {fileID: 0}
     - target: {fileID: 5684760362963053229, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
@@ -29502,17 +29506,17 @@ PrefabInstance:
     - target: {fileID: 6262614495279158156, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.18823531
+      value: 0.15686275
       objectReference: {fileID: 0}
     - target: {fileID: 6262614495279158156, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.18039216
+      value: 0.14901961
       objectReference: {fileID: 0}
     - target: {fileID: 6262614495279158156, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.16862746
+      value: 0.14117648
       objectReference: {fileID: 0}
     - target: {fileID: 6334483699989011424, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}

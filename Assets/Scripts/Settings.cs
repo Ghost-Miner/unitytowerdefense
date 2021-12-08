@@ -7,9 +7,9 @@ using System.IO;
 
 public class Settings : MonoBehaviour
 {
-    [SerializeField] private AudioMixer   audioMixer;             //Audio mixer
+    //[SerializeField] private AudioMixer   audioMixer;         //Audio mixer
 
-    [SerializeField] private TMP_Dropdown qualityDropdown;        //Quality dropdown
+    [SerializeField] private TMP_Dropdown qualityDropdown;    //Quality dropdown
 
     [SerializeField] private Slider   MusicVolumeSlider;      //Music Volume slider
     [SerializeField] private Slider   SFXVolumeSlider;        //SFX Volume slider
@@ -27,6 +27,9 @@ public class Settings : MonoBehaviour
     private int     qualIndex;     // Quality index
     private bool    playMus;
     private bool    playSfx;
+
+    [SerializeField] private TMP_Text[] textsArray;
+    [SerializeField] private Color textColor;
 
     private void OnDisable()
     {
@@ -51,37 +54,31 @@ public class Settings : MonoBehaviour
     void Start()
     {
         LoadSettimgs();
-        Debug.Log("start");
+
+        /*for (int i = 0; i < textsArray.Length; i++)
+        {
+            textsArray[i].color = textColor;
+        }*/
     }
 
     // Change volume
     #region Volume settings
     // Sound effects 
-    public void ChangeVolumeSFX(bool SFXvolume)
+    public void ChangeVolumeSFX(bool _playSFX)
     {
-        //audioMixer.SetFloat("soundVol", Mathf.Log10(SFXvolume) * 20);
-        //SFXVolumeSliderText.text = (SFXvolume*100).ToString("0") + "%";
-
-        //volSFX = SFXvolume;
-
-        playSounds = SFXvolume;
+        playSounds = _playSFX;
         playSfx = playSounds;
 
-        Debug.Log("OPTIONS SFX volume: " + SFXvolume);
+        //Debug.Log("OPTIONS SFX volume: " + SFXvolume);
     }
 
     // Music
-    public void ChangeVolumeMusic(bool Musicvolume)
+    public void ChangeVolumeMusic(bool _playMusic)
     {
-        //audioMixer.SetFloat("musicVol", Mathf.Log10(Musicvolume) * 20);
-        //MusicVolumeSliderText.text = (Musicvolume*100).ToString("0") + "%";
-
-        //volMusic = Musicvolume;
-
-        playMusic = Musicvolume;
+        playMusic = _playMusic;
         playMus = playMusic;
 
-        Debug.Log("OPTIONS Music volume: " + Musicvolume);
+        //Debug.Log("OPTIONS Music volume: " + Musicvolume);
     }
 
     // Sound effects 
@@ -92,18 +89,18 @@ public class Settings : MonoBehaviour
 
         volSFX = SFXvolume;
 
-        Debug.Log("OPTIONS SFX volume: " + SFXvolume);
+        //Debug.Log("OPTIONS SFX volume: " + SFXvolume);
     }
 
     // Music
     public void SetVolumeMusic(float Musicvolume)
     {
-        audioMixer.SetFloat("musicVol", Mathf.Log10(Musicvolume) * 20);
+        //audioMixer.SetFloat("musicVol", Mathf.Log10(Musicvolume) * 20);
         //MusicVolumeSliderText.text = (Musicvolume*100).ToString("0") + "%";
 
         volMusic = Musicvolume;
 
-        Debug.Log("OPTIONS Music volume: " + Musicvolume);
+        //Debug.Log("OPTIONS Music volume: " + Musicvolume);
     }
     #endregion
 
@@ -114,9 +111,26 @@ public class Settings : MonoBehaviour
 
         qualIndex = qualityIndex;
 
-        Debug.Log("OPTIONS Quality: " + qualityIndex);
+        //Debug.Log("OPTIONS Quality: " + qualityIndex);
     }
 
+    public void ResetSettings ()
+    {
+        SettingsData settingsData = new SettingsData
+        {
+            Sound = true,
+            Music = true,
+            quality = 0
+        };
+
+        string json = JsonUtility.ToJson(settingsData);
+
+        File.WriteAllText(Application.dataPath + "/Game data" + "/Settings.json", json);
+
+        Debug.Log(json);
+
+        LoadSettimgs();
+    }
 
     // Save settings function
     #region Save and load settings function
@@ -124,8 +138,6 @@ public class Settings : MonoBehaviour
     {
         SettingsData settingsData = new SettingsData
         {
-            SFXvolume = volSFX,
-            Musicvolume = volMusic,
             quality = qualIndex,
             Sound = playSfx,
             Music = playMus
@@ -162,9 +174,9 @@ public class Settings : MonoBehaviour
         SFXToggle.isOn = loadSettings.Sound;
         MusicToggle.isOn = loadSettings.Music;
 
-        Debug.Log("LOAD SFX Volume: " + loadSettings.Sound);
-        Debug.Log("LOAD Music Volume: " + loadSettings.Music);
-        Debug.Log("LOAD Quality: " + loadSettings.quality);
+        //Debug.Log("LOAD SFX Volume: " + loadSettings.Sound);
+        //Debug.Log("LOAD Music Volume: " + loadSettings.Music);
+        //Debug.Log("LOAD Quality: " + loadSettings.quality);
     }
 
     // List of settings values

@@ -13068,7 +13068,11 @@ MonoBehaviour:
   scrollSpeed: 5
   zoomMinY: 10
   zoomMaxY: 50
-  defaultCamPosition: {x: 0, y: 0, z: 0}
+  yPos169: 44
+  yPos1610: 45
+  yPos43: 57
+  yPos54: 55
+  yPos32: 50
 --- !u!1 &977640528
 GameObject:
   m_ObjectHideFlags: 0
@@ -15570,7 +15574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6862745}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -15610,8 +15614,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -209, y: 0}
-  m_SizeDelta: {x: -418, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1162056985
 PrefabInstance:
@@ -20534,6 +20538,11 @@ PrefabInstance:
     - target: {fileID: 8115234962369643720, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8242125491927797028, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8789738117229159913, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
@@ -37473,8 +37482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 515, y: -25}
-  m_SizeDelta: {x: 270, y: 50}
+  m_AnchoredPosition: {x: 375, y: -25}
+  m_SizeDelta: {x: 250.00002, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047717703
 MonoBehaviour:
