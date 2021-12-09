@@ -8,6 +8,7 @@ using System.IO;
 public class Settings : MonoBehaviour
 {
     //[SerializeField] private AudioMixer   audioMixer;         //Audio mixer
+    [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private TMP_Dropdown qualityDropdown;    //Quality dropdown
 
@@ -19,6 +20,7 @@ public class Settings : MonoBehaviour
 
     private bool playMusic;
     private bool playSounds;
+
 
     // Variables used to save settings into a file
     private float   volMaster;     // Master Volume
@@ -42,17 +44,18 @@ public class Settings : MonoBehaviour
         if (!settingsFile)
         {
             Debug.Log("settingsFile sfile not fond");
-            SetVolumeMusic(1.0f);
-            SetVolumeSFX(1.0f);
             SetQuality(0);
 
-            //SaveSettings();
+            SaveSettings();
             LoadSettimgs();
         }
     }
 
     void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+        Debug.Log("Audiomanager: " + audioManager.gameObject.name);
+
         LoadSettimgs();
 
         /*for (int i = 0; i < textsArray.Length; i++)
@@ -69,6 +72,8 @@ public class Settings : MonoBehaviour
         playSounds = _playSFX;
         playSfx = playSounds;
 
+        audioManager.StopSounds();
+
         //Debug.Log("OPTIONS SFX volume: " + SFXvolume);
     }
 
@@ -78,11 +83,13 @@ public class Settings : MonoBehaviour
         playMusic = _playMusic;
         playMus = playMusic;
 
+        audioManager.StopSounds();
+
         //Debug.Log("OPTIONS Music volume: " + Musicvolume);
     }
 
     // Sound effects 
-    public void SetVolumeSFX(float SFXvolume)
+    /*public void SetVolumeSFX(float SFXvolume)
     {
         //audioMixer.SetFloat("soundVol", Mathf.Log10(SFXvolume) * 20);
         //SFXVolumeSliderText.text = (SFXvolume*100).ToString("0") + "%";
@@ -101,7 +108,7 @@ public class Settings : MonoBehaviour
         volMusic = Musicvolume;
 
         //Debug.Log("OPTIONS Music volume: " + Musicvolume);
-    }
+    }*/
     #endregion
 
     // Change quality

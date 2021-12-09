@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
     {
         LoadSettimgs();
 
-        Play("Music"); //Play music
+        Play("kevin_breaktime"); //Play music
     }
 
     //Play the sound
@@ -59,16 +59,33 @@ public class AudioManager : MonoBehaviour
             return;
         }
          
-        if (s.Music && !playMusic)
+        if (s.Music && playMusic)
         {
-            return;
-        } 
-        else if (!s.Music && !playSound)
-        {
-            return;
+            s.source.Play();
         }
+        else if (!s.Music && playSound)
+        {
+            s.source.Play();
+        }
+    }
 
-        s.source.Play();
+    public void StopSounds ()
+    {
+        LoadSettimgs();
+
+        foreach (Sound snd in sounds)
+        {
+            if (snd.Music && !playMusic)
+            {
+                snd.source.Stop();
+                //Debug.Log("AM: Stopping music" + snd.name);
+            }
+            else if (!snd.Music && !playSound)
+            {
+                snd.source.Stop();
+                //Debug.Log("AM: Stopping sfx" + snd.name);
+            }
+        }
     }
 
     // Load settings function
