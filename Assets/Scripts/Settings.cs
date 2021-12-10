@@ -21,7 +21,6 @@ public class Settings : MonoBehaviour
     private bool playMusic;
     private bool playSounds;
 
-
     // Variables used to save settings into a file
     private float   volMaster;     // Master Volume
     private float   volSFX;        // Sound effects Volume
@@ -36,6 +35,8 @@ public class Settings : MonoBehaviour
     private void OnDisable()
     {
         SaveSettings();
+
+        audioManager.Play("kevin_breaktime");
     }
 
     private void Awake()
@@ -46,7 +47,7 @@ public class Settings : MonoBehaviour
             Debug.Log("settingsFile sfile not fond");
             SetQuality(0);
 
-            SaveSettings();
+            //SaveSettings();
             LoadSettimgs();
         }
     }
@@ -54,7 +55,6 @@ public class Settings : MonoBehaviour
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
-        Debug.Log("Audiomanager: " + audioManager.gameObject.name);
 
         LoadSettimgs();
 
@@ -66,13 +66,43 @@ public class Settings : MonoBehaviour
 
     // Change volume
     #region Volume settings
+
+    public void ToggleSunds ()
+    {
+        playSounds = !playSounds;
+        Debug.Log("Sounds: " + playSounds);
+
+        playSfx = playSounds;
+    }
+
+    public void ToggleMusic (bool music)
+    {
+        playMusic = music;
+
+        playMus = playMusic;
+
+        if (music)
+        {
+            //audioManager.Play("kevin_breaktime");
+            Debug.Log("music true");
+        }
+        else
+        {
+            audioManager.Stop("kevin_breaktime");
+            Debug.Log("music false");
+        }
+    }
+
     // Sound effects 
     public void ChangeVolumeSFX(bool _playSFX)
     {
         playSounds = _playSFX;
         playSfx = playSounds;
 
-        audioManager.StopSounds();
+        if (!_playSFX)
+        {
+            audioManager.StopSounds();
+        }
 
         //Debug.Log("OPTIONS SFX volume: " + SFXvolume);
     }
@@ -83,7 +113,18 @@ public class Settings : MonoBehaviour
         playMusic = _playMusic;
         playMus = playMusic;
 
-        audioManager.StopSounds();
+
+        if (!_playMusic)
+        {
+            audioManager.StopSounds();
+            Debug.Log("music: " + _playMusic);
+            audioManager.Stop("kevin_breaktime");
+        }
+        else
+        {
+            Debug.Log("music: " + _playMusic);
+            audioManager.Play("kevin_breaktime");
+        }
 
         //Debug.Log("OPTIONS Music volume: " + Musicvolume);
     }

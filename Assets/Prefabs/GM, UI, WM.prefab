@@ -14046,6 +14046,7 @@ MonoBehaviour:
   versionText: {fileID: 815715501033442716}
   sceneNameText: {fileID: 8071106435899223614}
   autoStartToggle: {fileID: 1010058118187736122}
+  ingameSettings: {fileID: 4298024426008129839}
 --- !u!1 &5612366340517887814
 GameObject:
   m_ObjectHideFlags: 0
@@ -14267,6 +14268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415349b94ae3ce044b4b58feeb0723b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   qualityDropdown: {fileID: 5225918340194764094}
   SFXToggle: {fileID: 3467086712703989163}
   MusicToggle: {fileID: 4903255400772165138}

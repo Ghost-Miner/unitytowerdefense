@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text sceneNameText;
 
     [SerializeField] private Toggle autoStartToggle;
+
+    [SerializeField] private IngameSettings ingameSettings;
     #endregion
 
     private void Start()
@@ -45,6 +47,8 @@ public class GameManager : MonoBehaviour
 
         hideEdgesCanvas.SetActive(true);
         StartCoroutine(HideTrackArrow());
+
+        //ingameSettings = FindObjectOfType<IngameSettings>();
 
         //InvokeRepeating("UpdateMesh", 5f, meshUpdateTime);
     }
@@ -94,7 +98,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartScene ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
     }
 
     public void HidePanel (GameObject panel)
@@ -114,6 +118,8 @@ public class GameManager : MonoBehaviour
 
     public void OpenSettings ()
     {
+        ingameSettings.SetOptions();
+
         settingPanel.SetActive(true);
     }
 

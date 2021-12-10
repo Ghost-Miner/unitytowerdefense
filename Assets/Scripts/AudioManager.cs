@@ -58,7 +58,13 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Sound " + name + " not found!");
             return;
         }
-         
+
+        if (s.source.isPlaying)
+        {
+            Debug.Log(gameObject.name + " | Sound " + s.name + " is already playing. Aborting.");
+            return;
+        }
+
         if (s.Music && playMusic)
         {
             s.source.Play();
@@ -67,6 +73,21 @@ public class AudioManager : MonoBehaviour
         {
             s.source.Play();
         }
+    }
+
+    //Stop the sound
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+
+        //Display warning if sound was not found
+        if (s == null)
+        {
+            Debug.LogWarning("Sound " + name + " not found!");
+            return;
+        }
+
+        s.source.Stop();
     }
 
     public void StopSounds ()

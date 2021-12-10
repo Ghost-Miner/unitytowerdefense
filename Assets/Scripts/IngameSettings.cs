@@ -7,6 +7,8 @@ using System.IO;
 
 public class IngameSettings : MonoBehaviour
 {
+    [SerializeField] private AudioManager audioManager;
+
     [SerializeField] private TMP_Dropdown qualityDropdown;    //Quality dropdown
 
     [SerializeField] private Toggle SFXToggle;
@@ -22,9 +24,16 @@ public class IngameSettings : MonoBehaviour
     private bool playMus;
     private bool playSfx;
 
-    private void OnEnable()
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+        Debug.Log("IG AM: " + audioManager.gameObject.name);
+    }
+
+    public void SetOptions ()
     {
         LoadSettimgs();
+        Debug.Log("LOAD SETTINGS");
     }
 
     public void CloseAndSave()
@@ -37,6 +46,8 @@ public class IngameSettings : MonoBehaviour
     public void Cancel ()
     {
         settingPanel.SetActive(false);
+
+        LoadSettimgs();
     }
 
     #region Volume settings
@@ -46,7 +57,10 @@ public class IngameSettings : MonoBehaviour
         playSounds = _playSFX;
         playSfx = playSounds;
 
-        //Debug.Log("OPTIONS SFX volume: " + SFXvolume);
+        if (!_playSFX)
+        {
+            audioManager.StopSounds();
+        }
     }
 
     // Music
@@ -55,7 +69,19 @@ public class IngameSettings : MonoBehaviour
         playMusic = _playMusic;
         playMus = playMusic;
 
-        //Debug.Log("OPTIONS Music volume: " + Musicvolume);
+
+        if (!_playMusic)
+        {
+            audioManager.StopSounds();
+
+            //Debug.Log("music: " + _playMusic);
+            audioManager.Stop("kevin_breaktime");
+        }
+        else
+        {
+            //Debug.Log("music: " + _playMusic);
+            //audioManager.Play("kevin_breaktime");
+        }
     }
     #endregion
 
