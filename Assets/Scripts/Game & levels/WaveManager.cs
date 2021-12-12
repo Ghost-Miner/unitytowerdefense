@@ -21,6 +21,7 @@ public class WaveManager : MonoBehaviour
     private int   waveIndex = 0;
     private bool  waveStarted = false;
     private float gameSpeed = 1f;
+    private GameManager gameManager;
 
     private GameObject unitPlaceholder;
     [SerializeField] private Transform  spawnPoint;
@@ -132,6 +133,9 @@ public class WaveManager : MonoBehaviour
         waveStartButton.interactable = false;
         startButton.SetActive(false);
         speedButton.SetActive(false);
+
+        gameManager.levelFinished = true;
+        gameManager.SaveGame();
 
         this.enabled = false;
     }

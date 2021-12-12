@@ -869,9 +869,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'No special properties.
-
-    It''s just a wall.'
+  m_text: It's just a wall.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b6f4b2221989ef94c80595ede0e94d57, type: 2}
   m_sharedMaterial: {fileID: 8963475446806293772, guid: b6f4b2221989ef94c80595ede0e94d57,
@@ -4208,7 +4206,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Range: Medium
 
-    Damage:  25 / bullet
+    Damage:  10 / bullet
 
     Fire rate: Slow'
   m_isRightToLeft: 0
@@ -7936,28 +7934,28 @@ MonoBehaviour:
     prefab: {fileID: 4863411048247325529, guid: a1d689ff2eca9ea49864f4aae1f23ab2,
       type: 3}
     upgradePrefab: {fileID: 0}
-    sellPrice: 125
-    buyPrice: 250
+    sellPrice: 250
+    buyPrice: 500
     upgradePrice: 1000000
   MachineTurret:
     prefab: {fileID: 7268318667047336208, guid: 01e8ccf5f0724f04a8a57e8dbab2c82a,
       type: 3}
     upgradePrefab: {fileID: 0}
-    sellPrice: 50
-    buyPrice: 100
+    sellPrice: 125
+    buyPrice: 250
     upgradePrice: 1000000
   FlameTurretBP:
     prefab: {fileID: 76358810558602425, guid: 924010223957d8044a006bd9d67b9a4e, type: 3}
     upgradePrefab: {fileID: 0}
-    sellPrice: 35
-    buyPrice: 75
+    sellPrice: 50
+    buyPrice: 100
     upgradePrice: 1000000
   wallBP:
     prefab: {fileID: 8183395618526120554, guid: 63175196ba374a549af3e23a8cf8540f,
       type: 3}
     upgradePrefab: {fileID: 0}
     sellPrice: 0
-    buyPrice: 5
+    buyPrice: 10
     upgradePrice: 1000000
   basicPrice: {fileID: 6624006535748722100}
   laserPrice: {fileID: 3191091365415886458}
@@ -14887,7 +14885,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Range: Long
 
-    Damage:  25 / bullet
+    Damage:  10 / bullet
 
     Fire rate: Fast'
   m_isRightToLeft: 0
@@ -20393,7 +20391,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Range: Short
 
-    Damage:  15 / bullet
+    Damage:  10 / bullet
 
     Fire rate: Very fast'
   m_isRightToLeft: 0

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  health: 25
+  health: 50
 --- !u!195 &-7476571010097048268
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 4863411048254570641}
   - component: {fileID: 5821037998296890157}
   m_Layer: 0
-  m_Name: Laser 2
+  m_Name: Laser 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 0}
-  fireRate: 0.5
+  fireRate: 0.25
   range: 15
   turnSpeed: 10
   enemyTag: Enemy

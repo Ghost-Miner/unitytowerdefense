@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.AI;
 using UnityEngine;
+using System.IO;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -11,13 +12,18 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public static string versionName = "Alpha 1";
 
-    private bool gameEnded = false;
-    private bool isPaused  = false;
+    private bool  gameEnded = false;
+    private bool  isPaused  = false;
     private float hideArrowTime = 3f;
 
-    public float meshUpdateTime = 2f;
+    public float meshUpdateTime = 100f;
 
     [SerializeField] private NavMeshSurface surface;
+
+    [Header("Save file")]
+    public bool levelFinished;
+    public bool levelUnlocked;
+    private string saveFile;
 
     [Header ("Game UI")]
     [SerializeField] private GameObject pausePanel;
@@ -42,6 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        string fileName = SceneManager.GetActiveScene().name + ".json";
+        Debug.Log("file " + fileName);
+
         versionText.text   = versionName;
         sceneNameText.text = "Scene: " + SceneManager.GetActiveScene().name;
 
@@ -151,7 +160,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
     }
-
+    
     private IEnumerator HideTrackArrow()
     {
         trackArrow.SetActive(true);
@@ -160,4 +169,42 @@ public class GameManager : MonoBehaviour
 
         trackArrow.SetActive(false);
     }
+
+
+    // Save settings function
+    #region Save and load settings function
+    public void SaveGame()
+    {
+        string fileName = SceneManager.GetActiveScene().name + ".json";
+        Debug.Log("file " + fileName);
+
+        LevelData levelData = new LevelData
+        {
+            unlocked = levelUnlocked,
+            finished = levelFinished,
+        };
+
+        string json = JsonUtility.ToJson(levelData);
+
+        File.WriteAllText(Application.dataPath + "/Game data" + "/" + fileName + ".json", json);
+
+        Debug.Log(json);
+    }
+
+    // Load settings function
+    public void LoadGame()
+    {
+        string json = File.ReadAllText(Application.dataPath + "/Game data" + "/Level_.json");
+
+        LevelData loadLevelData = JsonUtility.FromJson<LevelData>(json);
+        
+    }
+
+    // List of settings values
+    public class LevelData
+    {
+        public bool unlocked;
+        public bool finished;
+    }
+    #endregion
 }
