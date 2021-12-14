@@ -55,7 +55,7 @@ public class Node : MonoBehaviour
         
         Invoke("UpdateMesh", meshUpdateDelay);
 
-        Debug.Log("### turret built, money: " + PlayerStats.money);
+        //Debug.Log("### turret built, money: " + PlayerStats.money);
     }
 
     public void UpgradeTurret ()

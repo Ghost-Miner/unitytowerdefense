@@ -21,9 +21,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NavMeshSurface surface;
 
     [Header("Save file")]
-    public bool levelFinished;
-    public bool levelUnlocked;
+    [SerializeField] private int  levelNumber;
+    [SerializeField] private int  levelCount;
+    [SerializeField] private bool tutorialLevel;
+    private string dataFolder;
     private string saveFile;
+    private string nextLvlSave;
+    private bool   levelFinished;
+    private bool   levelUnlocked;
+    private bool   nextLevelFinished;
+    private bool   nextLevelUnlocked;
 
     [Header ("Game UI")]
     [SerializeField] private GameObject pausePanel;
@@ -46,10 +53,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private IngameSettings ingameSettings;
     #endregion
 
+    private void Awake()
+    {
+        dataFolder  = Application.dataPath + "/Game data" + "/";
+        saveFile    = "Level_" +  levelNumber     + ".json";
+        nextLvlSave = "Level_" + (levelNumber + 1)+ ".json";
+    }
+
     private void Start()
     {
-        string fileName = SceneManager.GetActiveScene().name + ".json";
-        Debug.Log("file " + fileName);
+        Debug.Log("Save loc: " + dataFolder + saveFile);
+        Debug.Log("Save loc: " + dataFolder + nextLvlSave);
 
         versionText.text   = versionName;
         sceneNameText.text = "Scene: " + SceneManager.GetActiveScene().name;
@@ -175,8 +189,21 @@ public class GameManager : MonoBehaviour
     #region Save and load settings function
     public void SaveGame()
     {
-        string fileName = SceneManager.GetActiveScene().name + ".json";
-        Debug.Log("file " + fileName);
+        if (tutorialLevel)
+        {
+            if (SceneManager.GetActiveScene().name == "Tutorial 2")
+            {
+                TutorialSave();
+                Debug.Log("Saved tutorial file");
+                return;
+            }
+            Debug.Log("Tutorial level. dont need to save it");
+            return;
+        }
+
+        // This level
+        levelFinished = true;
+        levelUnlocked = true;
 
         LevelData levelData = new LevelData
         {
@@ -186,7 +213,37 @@ public class GameManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(levelData);
 
-        File.WriteAllText(Application.dataPath + "/Game data" + "/" + fileName + ".json", json);
+        File.WriteAllText(dataFolder + saveFile, json);
+
+        Debug.Log("This level save " + json);
+
+        // Next level
+        nextLevelFinished = false;
+        nextLevelUnlocked = true;
+
+        LevelData nextLevelData = new LevelData
+        {
+            unlocked = nextLevelUnlocked,
+            finished = nextLevelFinished,
+        };
+
+        string NLjson = JsonUtility.ToJson(nextLevelData);
+
+        File.WriteAllText(dataFolder + saveFile, NLjson);
+
+        Debug.Log("Next level save " + NLjson);
+    }
+
+    private void TutorialSave ()
+    {
+        LevelData levelData = new LevelData
+        {
+            finished = true
+        };
+
+        string json = JsonUtility.ToJson(levelData);
+
+        File.WriteAllText(dataFolder + "Tutorial.json", json);
 
         Debug.Log(json);
     }

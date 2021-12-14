@@ -21,6 +21,7 @@ public class WaveManager : MonoBehaviour
     private int   waveIndex = 0;
     private bool  waveStarted = false;
     private float gameSpeed = 1f;
+    [SerializeField]
     private GameManager gameManager;
 
     private GameObject unitPlaceholder;
@@ -133,8 +134,6 @@ public class WaveManager : MonoBehaviour
         waveStartButton.interactable = false;
         startButton.SetActive(false);
         speedButton.SetActive(false);
-
-        gameManager.levelFinished = true;
         gameManager.SaveGame();
 
         this.enabled = false;
@@ -142,9 +141,8 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator WaveSpawn()
     {
-
-        float typesDelay = 3f;
-        float wavesDelay = 3f;
+        float  typesDelay = 3f;
+        float  wavesDelay = 3f;
         string incorretRateErrMsg = "spawnRate is set to 0. Must be 1 or higher!";
 
         WaveBlueprint wave = waves[waveIndex];

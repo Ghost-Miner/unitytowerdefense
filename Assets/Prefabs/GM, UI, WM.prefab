@@ -14033,6 +14033,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshUpdateTime: 2
   surface: {fileID: 0}
+  levelNumber: 0
+  levelCount: 3
+  tutorialLevel: 0
   pausePanel: {fileID: 3624871322785746132}
   HudPanel: {fileID: 8702769254252672208}
   gameOverPanel: {fileID: 67346285206959486}
@@ -18263,6 +18266,7 @@ MonoBehaviour:
   startButton: {fileID: 3624871322695864333}
   speedButton: {fileID: 7873852793905897933}
   waveIndex: 0
+  gameManager: {fileID: 5566878352435554195}
   spawnPoint: {fileID: 0}
   levelWonPanel: {fileID: 1885718173877104793}
   errorReportWindow: {fileID: 7067014916034564327}

@@ -5086,6 +5086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566878352435554195, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
+      propertyPath: levelNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566878352435554195, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
       propertyPath: hideEdgesCanvas
       value: 
       objectReference: {fileID: 273718318}

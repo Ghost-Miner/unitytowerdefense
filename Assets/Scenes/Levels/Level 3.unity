@@ -27321,6 +27321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566878352435554195, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
+      propertyPath: levelNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5566878352435554195, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
       propertyPath: hideEdgesCanvas
       value: 
       objectReference: {fileID: 273718318}
@@ -29373,6 +29378,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1579547440383622965, guid: 290d07f63e5cf824eac0413868bbf3c5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 510.67078
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579547440383622965, guid: 290d07f63e5cf824eac0413868bbf3c5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2623
+      objectReference: {fileID: 0}
     - target: {fileID: 3933537295643813370, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_Color.a
