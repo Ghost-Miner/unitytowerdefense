@@ -17317,12 +17317,12 @@ PrefabInstance:
     - target: {fileID: 5566878352435554194, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
       propertyPath: startingLives
-      value: 200
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5566878352435554194, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
       propertyPath: startingMoney
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5566878352435554195, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
@@ -35062,6 +35062,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
+        type: 3}
+      propertyPath: m_VoxelSize
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6977380701931727330, guid: 74bfd2297dda3a546ac0b73bd243ec5a,
         type: 3}
       propertyPath: m_NavMeshData
