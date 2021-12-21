@@ -28,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
     public static int enemiesAlive = 0;
 
     public float  timeBeterrmWaves = 5.5f;
-    private float countdown = 2f;
+    //private float countdown = 2f;
     
     private int   waveIndex = 0;
     public bool waveAutoStart;

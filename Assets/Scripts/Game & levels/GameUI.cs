@@ -6,11 +6,19 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour
 {
     [SerializeField] private GameObject autoStartDesc;
+    [SerializeField] private GameObject placeOccupiedPanel;
+    [SerializeField] private Animator   animator;
+
+    private void Start()
+    {
+        placeOccupiedPanel.SetActive(true);
+    }
 
     private void OnDisable()
     {
         Time.timeScale = 1f;
     }
+
     public void RestartScene ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -35,4 +43,10 @@ public class GameUI : MonoBehaviour
     {
         autoStartDesc.SetActive(false);
     }
+
+    public void ShowPlaceOccupied ()
+    {
+        animator.SetTrigger("playAnim");
+    }
+
 }

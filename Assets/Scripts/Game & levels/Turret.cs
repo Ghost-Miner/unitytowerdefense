@@ -5,27 +5,27 @@ using UnityEngine.AI;
 
 public class Turret : MonoBehaviour
 {
-    public NavMeshSurface navMeshSurface;
-
     private Transform target;
 
+    [SerializeField] private NavMeshSurface navMeshSurface;
+
     [Header("Attributed")]
-    public  float fireRate       = 1f;
-    private float fireCountDown  = 0f;
-    public  float range          = 15f;
+    [SerializeField] private float fireRate       = 1f;
+    [SerializeField] private float fireCountDown  = 0f;
+    [SerializeField] private float range          = 15f;
 
     [Header("Unity setup fields")]
-    public float  turnSpeed = 10f;
-    public string enemyTag = "Enemy";
+    [SerializeField] private float  turnSpeed = 10f;
+    [SerializeField] private string enemyTag = "Enemy";
 
-    public Transform  partToRotate;
-    public GameObject bulletPrefab;
-    public Transform  firePoint;
+    [SerializeField] private Transform  partToRotate;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform  firePoint;
 
 
     private void Start()
     {
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        InvokeRepeating("UpdateTarget", 0f, 0.25f);
     }
 
     private void Update()

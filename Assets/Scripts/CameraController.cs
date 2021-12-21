@@ -9,8 +9,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float panSpeed = 30f;
     [SerializeField] private float panBorderThickness = 10f;
 
-    [SerializeField] private float panMinX = 0f;
-    [SerializeField] private float panMaxX = 40f;
+    //[SerializeField] private float panMinX = 0f;
+    //[SerializeField] private float panMaxX = 40f;
 
     [SerializeField] private float scrollSpeed = 5f;
     [SerializeField] private float zoomMinY = 10f;

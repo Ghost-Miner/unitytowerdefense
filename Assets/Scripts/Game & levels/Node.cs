@@ -20,8 +20,11 @@ public class Node : MonoBehaviour
     private Color    startColor;
 
     private BuildManager BuildManager;
+    private GameUI gameUI;
 
     private float meshUpdateDelay = 0.1f;
+
+    [SerializeField] private bool occupied = false;
 
     void Start()
     {
@@ -29,6 +32,7 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         BuildManager = BuildManager.instance;
+        gameUI = FindObjectOfType<GameUI>();
     }    
 
     public Vector3 GetBuildPosition ()
@@ -38,6 +42,13 @@ public class Node : MonoBehaviour
 
     void BuildTurret (TurretBlueprint blueprint)
     {
+        if (occupied)
+        {
+            Debug.Log("Node occupied.");
+            gameUI.ShowPlaceOccupied();
+            return;
+        }
+
         if (PlayerStats.money < blueprint.buyPrice)
         {
             //Debug.Log("not enougn money");

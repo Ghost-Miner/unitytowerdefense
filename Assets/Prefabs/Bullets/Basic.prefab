@@ -96,7 +96,7 @@ MonoBehaviour:
   speed: 50
   impactEffect: {fileID: 4378740392479995866, guid: d796363aa6be7e84ca40985275b6eb00,
     type: 3}
-  damage: 10
+  damage: 25
   enemy: {fileID: 291080502810040633, guid: 45a97dc2b74a8774288cc5a46c67078b, type: 3}
 --- !u!135 &8182029168469673596
 SphereCollider:

@@ -5903,6 +5903,11 @@ PrefabInstance:
       objectReference: {fileID: 416241172}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: playerNavmesh
       value: 
       objectReference: {fileID: 0}
@@ -6503,6 +6508,11 @@ PrefabInstance:
       propertyPath: surface
       value: 
       objectReference: {fileID: 416241172}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
       propertyPath: playerNavmesh
@@ -8744,6 +8754,11 @@ PrefabInstance:
       propertyPath: surface
       value: 
       objectReference: {fileID: 416241172}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
       propertyPath: playerNavmesh
@@ -13073,8 +13088,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 30
   panBorderThickness: 10
-  panMinX: 0
-  panMaxX: 40
   scrollSpeed: 5
   zoomMinY: 10
   zoomMaxY: 50
@@ -17535,6 +17548,11 @@ PrefabInstance:
       objectReference: {fileID: 416241172}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: playerNavmesh
       value: 
       objectReference: {fileID: 0}
@@ -20110,6 +20128,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -57.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038386752070873626, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3319827753384443373, guid: ec3d29d7a63ef5146b3afa4ffca1e551,
         type: 3}
@@ -29404,6 +29427,11 @@ PrefabInstance:
       objectReference: {fileID: 416241172}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: playerNavmesh
       value: 
       objectReference: {fileID: 0}
@@ -35893,6 +35921,11 @@ PrefabInstance:
       objectReference: {fileID: 416241172}
     - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
         type: 3}
+      propertyPath: occupied
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734853952605044980, guid: f200f65ed750eff4c99fbb47e1398fc5,
+        type: 3}
       propertyPath: playerNavmesh
       value: 
       objectReference: {fileID: 0}
@@ -39581,7 +39614,7 @@ PrefabInstance:
     - target: {fileID: 8627037644239523263, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290d07f63e5cf824eac0413868bbf3c5, type: 3}
