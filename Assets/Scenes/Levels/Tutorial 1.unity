@@ -15531,8 +15531,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panSpeed: 30
   panBorderThickness: 10
-  panMinX: 0
-  panMaxX: 40
   scrollSpeed: 5
   zoomMinY: 10
   zoomMaxY: 50
@@ -17003,6 +17001,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526219803169860612, guid: d95c9abb008f6d44a992df105ca49db0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5156764525686493061, guid: d95c9abb008f6d44a992df105ca49db0,
         type: 3}
@@ -45192,7 +45195,7 @@ PrefabInstance:
     - target: {fileID: 8627037644239523263, guid: 290d07f63e5cf824eac0413868bbf3c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 290d07f63e5cf824eac0413868bbf3c5, type: 3}

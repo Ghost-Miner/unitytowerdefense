@@ -8132,14 +8132,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BasicTurretBP:
-    prefab: {fileID: 2526219802378843687, guid: d95c9abb008f6d44a992df105ca49db0,
+    prefab: {fileID: 2526219802378843687, guid: 44ec78f8a17355848a66b043c0671d30,
       type: 3}
     upgradePrefab: {fileID: 0}
     sellPrice: 10
     buyPrice: 25
     upgradePrice: 1000000
   LaserTurretBP:
-    prefab: {fileID: 4863411048247325529, guid: a1d689ff2eca9ea49864f4aae1f23ab2,
+    prefab: {fileID: 4863411048247325529, guid: f84645d33003e4d44b97b966f512cbd8,
       type: 3}
     upgradePrefab: {fileID: 0}
     sellPrice: 250
